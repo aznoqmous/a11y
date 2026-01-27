@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4hgdrya6rqd5"]
+
+[ext_resource type="Script" uid="uid://0ayoe8qs8gwt" path="res://scripts/shmup_game/player_bullet.gd" id="1_c2qvg"]
+[ext_resource type="Texture2D" uid="uid://c2i1am01w6mr1" path="res://sprites/shmup_game/player-bullet.png" id="2_q7rny"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcbj8"]
+radius = 17.0
+
+[node name="PlayerBullet" type="Area2D" unique_id=515463113]
+collision_mask = 2
+script = ExtResource("1_c2qvg")
+speed = Vector2(200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1393532717]
+texture = ExtResource("2_q7rny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108139952]
+position = Vector2(22, 0)
+shape = SubResource("CircleShape2D_gcbj8")

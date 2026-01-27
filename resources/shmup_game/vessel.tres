@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnedResource" format=3 uid="uid://du6yoohm1j47w"]
+
+[ext_resource type="PackedScene" uid="uid://csdvifrycelra" path="res://scenes/shmup_game/foe_vessel.tscn" id="1_tbwhn"]
+[ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="1_yue6y"]
+
+[resource]
+script = ExtResource("1_yue6y")
+cost = 1.0
+packed_scene = ExtResource("1_tbwhn")
+metadata/_custom_type_script = "uid://bjubkomc0m1mv"

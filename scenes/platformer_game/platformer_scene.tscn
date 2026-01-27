@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://e48rdc17n3tq"]
+
+[ext_resource type="Script" uid="uid://d3oractas32rd" path="res://scripts/platformer_game/platformer_scene.gd" id="1_2dopb"]
+[ext_resource type="Texture2D" uid="uid://biuxetsnl0dh6" path="res://sprites/shmup_game/shmup-parallax-1.png" id="2_j34ms"]
+[ext_resource type="Script" uid="uid://dm1r442wt8ydm" path="res://scripts/platformer_game/platformer_player.gd" id="3_j34ms"]
+[ext_resource type="Texture2D" uid="uid://c72dhxt20s1je" path="res://sprites/platformer_game/platformer-player.png" id="4_j34ms"]
+[ext_resource type="Script" uid="uid://bt3mwlrpnfcfa" path="res://scripts/platformer_game/platform.gd" id="5_ffo1l"]
+[ext_resource type="Texture2D" uid="uid://hyh3jftlmogi" path="res://sprites/rect.png" id="5_fljem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7k25"]
+radius = 53.338543
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j34ms"]
+resource_local_to_scene = true
+size = Vector2(390.625, 118.546875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffo1l"]
+resource_local_to_scene = true
+size = Vector2(390.625, 254.54688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7k25"]
+resource_local_to_scene = true
+size = Vector2(390.625, 278)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ffo1l"]
+
+[node name="PlatformerScene" type="Node2D" unique_id=1701240198]
+script = ExtResource("1_2dopb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=78951313]
+position = Vector2(261, 322)
+
+[node name="Decor" type="Node2D" parent="." unique_id=1385626041]
+position = Vector2(627, 211)
+
+[node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=1839759433]
+repeat_size = Vector2(256, 0)
+repeat_times = 20
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1962132458]
+position = Vector2(0, 310)
+texture = ExtResource("2_j34ms")
+
+[node name="World" type="Node2D" parent="." unique_id=1490610673]
+y_sort_enabled = true
+
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=920313295]
+position = Vector2(261, 322)
+slide_on_ceiling = false
+script = ExtResource("3_j34ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=804030744]
+texture = ExtResource("4_j34ms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1682444645]
+shape = SubResource("CircleShape2D_s7k25")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=655010018]
+position = Vector2(382, 502)
+script = ExtResource("5_ffo1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=1359351868]
+position = Vector2(-153, 5)
+scale = Vector2(390.625, 118.546875)
+texture = ExtResource("5_fljem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1530185070]
+position = Vector2(-153, 5)
+shape = SubResource("RectangleShape2D_j34ms")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=663501060]
+position = Vector2(382, 502)
+script = ExtResource("5_ffo1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2" unique_id=1314500984]
+position = Vector2(296, 6.2734375)
+scale = Vector2(390.625, 254.54688)
+texture = ExtResource("5_fljem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1654382958]
+position = Vector2(296, 6.2734375)
+shape = SubResource("RectangleShape2D_ffo1l")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1237493757]
+position = Vector2(1015, 498)
+script = ExtResource("5_ffo1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3" unique_id=1599176399]
+position = Vector2(296, -67)
+scale = Vector2(390.625, 278)
+texture = ExtResource("5_fljem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=747550256]
+position = Vector2(296, -67)
+shape = SubResource("RectangleShape2D_s7k25")
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=1737818657]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=181030800]
+position = Vector2(0, 650)
+shape = SubResource("WorldBoundaryShape2D_ffo1l")

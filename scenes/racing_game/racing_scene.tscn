@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://djcily835i1nn"]
+
+[ext_resource type="Script" uid="uid://cj8ddmd74xbjq" path="res://scripts/racing_game/racing_scene.gd" id="1_ovyp3"]
+[ext_resource type="Texture2D" uid="uid://diaek3qgoodhs" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
+[ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
+[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="4_6p6p5"]
+[ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
+[ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="7_p06tx"]
+[ext_resource type="Resource" uid="uid://cuar3jfc1lprd" path="res://resources/racing_game/car.tres" id="8_6p6p5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgbw8"]
+radius = 53.338543
+
+[node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes")]
+y_sort_enabled = true
+script = ExtResource("1_ovyp3")
+lanes = [NodePath("Lanes/Lane1"), NodePath("Lanes/Lane2"), NodePath("Lanes/Lane3")]
+
+[node name="Decor" type="Node2D" parent="." unique_id=1000481696]
+position = Vector2(627, 211)
+
+[node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=2117951092]
+repeat_size = Vector2(256, 0)
+autoscroll = Vector2(-300, 0)
+repeat_times = 20
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1704954460]
+position = Vector2(0, 5)
+texture = ExtResource("2_26ryi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1881290777]
+position = Vector2(0, 211)
+texture = ExtResource("2_26ryi")
+
+[node name="World" type="Node2D" parent="." unique_id=1133602282]
+y_sort_enabled = true
+
+[node name="Player" type="Area2D" parent="World" unique_id=173059636]
+position = Vector2(261, 322)
+collision_mask = 2
+script = ExtResource("3_p06tx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=1043439387]
+texture = ExtResource("4_6p6p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1766896921]
+shape = SubResource("CircleShape2D_rgbw8")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=83535741 node_paths=PackedStringArray("spawn_parent", "spawn_points")]
+script = ExtResource("6_pbor5")
+spawn_parent = NodePath("../World")
+spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
+spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5")])
+
+[node name="Spawns" type="Node2D" parent="Spawner" unique_id=864102401]
+position = Vector2(1008, 0)
+
+[node name="Lane1" type="Node2D" parent="Spawner/Spawns" unique_id=2121225860]
+position = Vector2(253, 128)
+
+[node name="Lane2" type="Node2D" parent="Spawner/Spawns" unique_id=463453556]
+position = Vector2(253, 328)
+
+[node name="Lane3" type="Node2D" parent="Spawner/Spawns" unique_id=693585610]
+position = Vector2(253, 528)
+
+[node name="Lanes" type="Node2D" parent="." unique_id=1066872611]
+
+[node name="Lane1" type="Node2D" parent="Lanes" unique_id=1813416057]
+position = Vector2(253, 128)
+
+[node name="Lane2" type="Node2D" parent="Lanes" unique_id=1897447075]
+position = Vector2(253, 328)
+
+[node name="Lane3" type="Node2D" parent="Lanes" unique_id=1302044201]
+position = Vector2(253, 528)
+
+[connection signal="body_entered" from="World/Player" to="." method="_on_player_body_entered"]
