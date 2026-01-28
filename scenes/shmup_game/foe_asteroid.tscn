@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bb8bhjb17kpyr"]
+
+[ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_wmmmj"]
+[ext_resource type="PackedScene" uid="uid://cfd7crw1aflmp" path="res://scenes/shmup_game/foe_bullet.tscn" id="2_7ucxo"]
+[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="3_wmmmj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
+radius = 190.44421
+
+[node name="FoeAsteroid" type="Area2D" unique_id=2070314878]
+collision_layer = 2
+script = ExtResource("1_wmmmj")
+speed = Vector2(-100, 0)
+max_health = 10.0
+bullet_scene = ExtResource("2_7ucxo")
+bullet_speed = 300.0
+fire_cooldown = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
+modulate = Color(0.23137255, 0.078431375, 1, 1)
+scale = Vector2(3.23, 3.23)
+texture = ExtResource("3_wmmmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
+shape = SubResource("CircleShape2D_tuqxm")
