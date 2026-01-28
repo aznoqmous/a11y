@@ -12,6 +12,7 @@ class_name Foe extends Area2D
 @export var bullet_speed := 100.0
 @export var fire_cooldown := 1.0
 var fire_time = 0.0
+var current_speed := Vector2.ZERO
 
 @onready var sprite_container: Node2D = $SpriteContainer
 
@@ -21,13 +22,14 @@ var is_alive : bool :
 var current_health := 0.0
 
 func _ready():
+	current_speed = speed
 	current_health = max_health
 	rotation_speed = lerp(rotation_speed, rotation_speed * randf(), rotation_speed_random)
 	if rotation_speed > 0: rotate(randf() * TAU);
 
 func _process(delta: float) -> void:
-	speed *= 1.0 + speed_scaling
-	position += delta * speed
+	current_speed = speed * (1.0 + speed_scaling * GameManager.time)
+	position += delta * current_speed
 	sprite_container.scale = lerp(sprite_container.scale, Vector2.ONE, delta * 5.0)
 	sprite_container.rotate(rotation_speed * TAU * delta)
 	fire_time -= delta

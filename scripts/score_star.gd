@@ -8,7 +8,10 @@ func _ready() -> void:
 		GameManager.gain_score(1)
 		queue_free()
 	)
-
+	area_entered.connect(func(area: RigidBody2D):
+		GameManager.gain_score(1)
+		queue_free()
+	)
 	sprite_2d.rotate(randf() * PI)
 
 func _process(delta: float) -> void:

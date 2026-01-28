@@ -5,6 +5,6 @@ class_name OverlayControl extends CanvasLayer
 func _ready() -> void:
 	score_label.text = str(GameManager.score)
 	GameManager.score_update.connect(func(value):
-		score_label.text = str(value)
+		score_label.text = str(int(value))
 	)
 	
