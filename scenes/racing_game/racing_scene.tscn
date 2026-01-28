@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cj8ddmd74xbjq" path="res://scripts/racing_game/racing_scene.gd" id="1_ovyp3"]
 [ext_resource type="Texture2D" uid="uid://diaek3qgoodhs" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_cyw1b"]
+[ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
 [ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="4_6p6p5"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
@@ -14,10 +15,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgbw8"]
 radius = 53.338543
 
-[node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes")]
+[node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes", "alert_spawns")]
 y_sort_enabled = true
 script = ExtResource("1_ovyp3")
 lanes = [NodePath("Lanes/Lane1"), NodePath("Lanes/Lane2"), NodePath("Lanes/Lane3")]
+alert_spawns = [NodePath("Alerts/Lane1"), NodePath("Alerts/Lane2"), NodePath("Alerts/Lane3")]
+alert_scene = ExtResource("2_pbor5")
 
 [node name="OverlayControl" parent="." unique_id=863188350 instance=ExtResource("2_cyw1b")]
 
@@ -83,5 +86,16 @@ position = Vector2(253, 328)
 
 [node name="Lane3" type="Node2D" parent="Lanes" unique_id=1302044201]
 position = Vector2(253, 528)
+
+[node name="Alerts" type="Node2D" parent="." unique_id=584211520]
+
+[node name="Lane1" type="Node2D" parent="Alerts" unique_id=1177180008]
+position = Vector2(1059, 128)
+
+[node name="Lane2" type="Node2D" parent="Alerts" unique_id=1826587387]
+position = Vector2(1059, 328)
+
+[node name="Lane3" type="Node2D" parent="Alerts" unique_id=2070546829]
+position = Vector2(1059, 528)
 
 [connection signal="body_entered" from="World/Player" to="." method="_on_player_body_entered"]

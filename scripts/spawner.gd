@@ -39,6 +39,6 @@ func spawn():
 	last_spawn_point = spawn_point
 	spawn_parent.add_child(spawned_instance)
 	spawned_instance.global_position = spawn_point.global_position
-	on_spawn.emit(spawned_instance)
+	on_spawn.emit(spawned_instance, spawn_points.find(spawn_point))
 	
-signal on_spawn(foe: Foe)
+signal on_spawn(foe: Foe, spawn_index: int)

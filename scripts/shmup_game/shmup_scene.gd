@@ -3,7 +3,7 @@ class_name ShmupScene extends Node
 @export var star_score_scene : PackedScene
 @onready var spawner: Spawner = $Spawner
 func _ready():
-	spawner.on_spawn.connect(func(foe: Foe):
+	spawner.on_spawn.connect(func(foe: Foe, index):
 		foe.on_death.connect(func():
 			var star = star_score_scene.instantiate()
 			add_child(star)

@@ -21,7 +21,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	position += delta * speed
-	sprite_container.scale = lerp(scale, Vector2.ONE, delta * 5.0)
+	sprite_container.scale = lerp(sprite_container.scale, Vector2.ONE, delta * 5.0)
 	
 	fire_time -= delta
 	if bullet_scene and fire_cooldown and fire_time < 0:
