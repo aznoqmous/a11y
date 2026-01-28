@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca55kp4ucwlo2"
-path="res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"
+uid="uid://ux121wy0mag6"
+path="res://.godot/imported/platformer-player-jumping.PNG-c4bc42f631e13815c5521acb27637f51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/platformer_game/platformer-player.PNG"
-dest_files=["res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"]
+source_file="res://sprites/platformer_game/platformer-player-jumping.PNG"
+dest_files=["res://.godot/imported/platformer-player-jumping.PNG-c4bc42f631e13815c5521acb27637f51.ctex"]
 
 [params]
 

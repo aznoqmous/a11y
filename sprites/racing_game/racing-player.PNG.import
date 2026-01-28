@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca55kp4ucwlo2"
-path="res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"
+uid="uid://dq8gdrvhws5c3"
+path="res://.godot/imported/racing-player.PNG-c2b474982fb1cf17309324201ab5cbd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/platformer_game/platformer-player.PNG"
-dest_files=["res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"]
+source_file="res://sprites/racing_game/racing-player.PNG"
+dest_files=["res://.godot/imported/racing-player.PNG-c2b474982fb1cf17309324201ab5cbd6.ctex"]
 
 [params]
 
