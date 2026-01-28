@@ -1,6 +1,10 @@
 class_name ShmupPlayer extends Area2D
 
+@export var max_health := 1
+var current_health := 1
 @export var move_speed := 300.0
+
+@export_category("Bullet")
 @export var fire_speed := 0.2
 @export var bullet_speed := 400.0
 @export var bullet_scene : PackedScene
@@ -10,8 +14,9 @@ var fire_time := 0.0
 
 func _ready():
 	area_entered.connect(func(area: Area2D):
-		SceneManager.next_game()
+		take_damage(1)
 	)
+	current_health = max_health
 
 func _process(delta) -> void:
 	if Input.is_action_pressed("Up"):
@@ -34,3 +39,10 @@ func fire():
 	bullet_parent.add_child(bullet)
 	bullet.speed = Vector2.RIGHT * bullet_speed
 	bullet.global_position = global_position
+
+func take_damage(value):
+	if current_health <= 0: return;
+	current_health -= value
+	if current_health <= 0:
+		SceneManager.next_game()
+		

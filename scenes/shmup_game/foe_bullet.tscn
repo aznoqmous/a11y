@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfd7crw1aflmp"]
+
+[ext_resource type="Script" uid="uid://cwnyqb8fxc4e6" path="res://scripts/shmup_game/foe_bullet.gd" id="1_5v6uw"]
+[ext_resource type="Texture2D" uid="uid://ivix065hrrso" path="res://sprites/shmup_game/foe-bullet.png" id="2_vlt0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcbj8"]
+radius = 34.0147
+
+[node name="FoeBullet" type="Area2D" unique_id=515463113]
+collision_layer = 2
+script = ExtResource("1_5v6uw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1393532717]
+texture = ExtResource("2_vlt0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108139952]
+shape = SubResource("CircleShape2D_gcbj8")

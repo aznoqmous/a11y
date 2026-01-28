@@ -5,3 +5,5 @@ func _ready():
 		print("Collided")
 	)
 	
+func take_damage(value):
+	pass
