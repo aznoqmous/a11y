@@ -55,6 +55,9 @@ y_sort_enabled = true
 position = Vector2(261, 322)
 slide_on_ceiling = false
 script = ExtResource("3_j34ms")
+move_speed = 701.0
+gravity = 2000.0
+jump_power = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=804030744]
 texture = ExtResource("4_j34ms")
