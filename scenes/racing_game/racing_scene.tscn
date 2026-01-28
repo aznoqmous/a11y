@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djcily835i1nn"]
 
 [ext_resource type="Script" uid="uid://cj8ddmd74xbjq" path="res://scripts/racing_game/racing_scene.gd" id="1_ovyp3"]
-[ext_resource type="Texture2D" uid="uid://diaek3qgoodhs" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
+[ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
@@ -30,7 +30,7 @@ position = Vector2(627, 211)
 
 [node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
 repeat_size = Vector2(350, 350)
-autoscroll = Vector2(-200, 0)
+autoscroll = Vector2(-600, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
@@ -39,15 +39,17 @@ texture = ExtResource("5_15qfb")
 
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=2117951092]
 repeat_size = Vector2(256, 0)
-autoscroll = Vector2(-300, 0)
+autoscroll = Vector2(-600, 0)
 repeat_times = 20
 follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1704954460]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 5)
 texture = ExtResource("2_26ryi")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1881290777]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 211)
 texture = ExtResource("2_26ryi")
 

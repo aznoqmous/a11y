@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dmi7mq21uec6q"]
 
-[ext_resource type="Texture2D" uid="uid://biuxetsnl0dh6" path="res://sprites/shmup_game/shmup-parallax-1.png" id="1_b5ph2"]
 [ext_resource type="Script" uid="uid://b6aoctpc5swc" path="res://scripts/shmup_game/shmup_scene.gd" id="1_gcbj8"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="2_hd3y3"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="3_fm4q6"]
@@ -10,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4hgdrya6rqd5" path="res://scenes/shmup_game/player_bullet.tscn" id="5_sxcim"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/platformer_game/Background.png" id="5_xh4ap"]
 [ext_resource type="Texture2D" uid="uid://ck1qmejj1130l" path="res://sprites/shmup_game/Background-Parallax.PNG" id="6_g8h8x"]
-[ext_resource type="Texture2D" uid="uid://cv3t8mjnk823p" path="res://sprites/shmup_game/shmup-player.PNG" id="7_fm4q6"]
+[ext_resource type="Texture2D" uid="uid://cv3t8mjnk823p" path="res://sprites/shmup_game/shmup-player.png" id="7_fm4q6"]
 [ext_resource type="Resource" uid="uid://du6yoohm1j47w" path="res://resources/shmup_game/vessel.tres" id="7_gcbj8"]
 [ext_resource type="Resource" uid="uid://d2i6ppqqoft0y" path="res://resources/shmup_game/asteroid.tres" id="9_hd3y3"]
 [ext_resource type="Script" uid="uid://dufeqbwpxrd2v" path="res://scripts/transition_layer.gd" id="13_61vv6"]
@@ -46,25 +45,7 @@ repeat_times = 5
 position = Vector2(-163, 109)
 texture = ExtResource("5_xh4ap")
 
-[node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=603731524]
-repeat_size = Vector2(256, 0)
-autoscroll = Vector2(-300, 0)
-repeat_times = 20
-follow_viewport = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1615062805]
-position = Vector2(0, 310)
-texture = ExtResource("1_b5ph2")
-
-[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=154272212]
-repeat_size = Vector2(350, 350)
-repeat_times = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
-position = Vector2(-163, 109)
-texture = ExtResource("5_xh4ap")
-
-[node name="BackgroundParallax2" type="Parallax2D" parent="Decor" unique_id=1184471963]
+[node name="BackgroundParallax2" type="Parallax2D" parent="Decor" unique_id=1771125628]
 repeat_size = Vector2(350, 350)
 autoscroll = Vector2(-20, 0)
 repeat_times = 5
