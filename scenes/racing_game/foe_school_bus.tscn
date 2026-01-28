@@ -12,11 +12,6 @@ collision_layer = 2
 script = ExtResource("1_vc7ey")
 speed = Vector2(-170, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(1.9609375, 1.9609375)
-texture = ExtResource("2_nn756")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 shape = SubResource("RectangleShape2D_vc7ey")
 
@@ -35,3 +30,10 @@ scale = Vector2(0.5, 0.5)
 [node name="ScoreStar4" parent="." unique_id=189980769 instance=ExtResource("3_nn756")]
 position = Vector2(466, 0)
 scale = Vector2(0.5, 0.5)
+
+[node name="SpriteContainer" type="Node2D" parent="." unique_id=1424817762]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(1.9609375, 1.9609375)
+texture = ExtResource("2_nn756")

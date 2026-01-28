@@ -9,6 +9,8 @@ class_name Foe extends Area2D
 @export var fire_cooldown := 1.0
 var fire_time = 0.0
 
+@onready var sprite_container: Node2D = $SpriteContainer
+
 var is_alive : bool : 
 	get: return current_health > 0
 	
@@ -19,7 +21,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	position += delta * speed
-	scale = lerp(scale, Vector2.ONE, delta * 5.0)
+	sprite_container.scale = lerp(scale, Vector2.ONE, delta * 5.0)
 	
 	fire_time -= delta
 	if bullet_scene and fire_cooldown and fire_time < 0:
@@ -30,7 +32,7 @@ func take_damage(value):
 	if not is_alive: return
 	current_health -= value
 	if not is_alive: die()
-	scale = Vector2.ONE * 1.5
+	sprite_container.scale = Vector2.ONE * 1.5
 
 func fire():
 	var bullet := bullet_scene.instantiate() as FoeBullet

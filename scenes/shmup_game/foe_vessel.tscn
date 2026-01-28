@@ -16,8 +16,10 @@ bullet_scene = ExtResource("2_jnkde")
 bullet_speed = 300.0
 fire_cooldown = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
-texture = ExtResource("2_eq0s1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 shape = SubResource("CircleShape2D_tuqxm")
+
+[node name="SpriteContainer" type="Node2D" parent="." unique_id=610034430]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
+texture = ExtResource("2_eq0s1")
