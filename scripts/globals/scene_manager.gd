@@ -35,6 +35,7 @@ func load_title():
 	load_scene_progress(title_scene)
 
 func load_scene(path):
+	GameManager.reset_time()
 	_deferred_goto_scene.call_deferred(path)
 
 func _deferred_goto_scene(path):

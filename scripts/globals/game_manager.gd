@@ -1,9 +1,15 @@
 extends Node
 
-var score := 0
- 
+var score := 0.0
+var time := 0.0
+
+func _process(delta: float) -> void:
+	time += delta
+	
+func reset_time():
+	time = 0.0
+	
 func gain_score(value):
-	print("SCORED")
 	score += value
 	score_update.emit(score)
 	

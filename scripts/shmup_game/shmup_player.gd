@@ -28,7 +28,7 @@ func _process(delta) -> void:
 	if Input.is_action_pressed("Right"):
 		position.x += delta * move_speed
 		
-	if Input.is_action_pressed("LeftClick"):
+	if Input.is_action_pressed("Space"):
 		fire_time -= delta
 		if fire_time < 0:
 			fire()

@@ -18,7 +18,6 @@
 radius = 53.338543
 
 [node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes", "alert_spawns")]
-y_sort_enabled = true
 script = ExtResource("1_ovyp3")
 lanes = [NodePath("Lanes/Lane1"), NodePath("Lanes/Lane2"), NodePath("Lanes/Lane3")]
 alert_spawns = [NodePath("Alerts/Lane1"), NodePath("Alerts/Lane2"), NodePath("Alerts/Lane3")]
@@ -28,6 +27,15 @@ alert_scene = ExtResource("2_pbor5")
 
 [node name="Decor" type="Node2D" parent="." unique_id=1000481696]
 position = Vector2(627, 211)
+
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
+repeat_size = Vector2(350, 350)
+autoscroll = Vector2(-200, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
+position = Vector2(-163, 109)
+texture = ExtResource("5_15qfb")
 
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=2117951092]
 repeat_size = Vector2(256, 0)
@@ -42,14 +50,6 @@ texture = ExtResource("2_26ryi")
 [node name="Sprite2D2" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1881290777]
 position = Vector2(0, 211)
 texture = ExtResource("2_26ryi")
-
-[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
-repeat_size = Vector2(350, 350)
-repeat_times = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
-position = Vector2(-163, 109)
-texture = ExtResource("5_15qfb")
 
 [node name="World" type="Node2D" parent="." unique_id=1133602282]
 y_sort_enabled = true
@@ -77,9 +77,11 @@ texture = ExtResource("7_15qfb")
 [node name="Spawner" type="Node2D" parent="." unique_id=83535741 node_paths=PackedStringArray("spawn_parent", "spawn_points")]
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
-spawn_starting_coins = 4.0
-spawn_base_gain = 0.8
-spawn_gain_increment = 0.3
+spawn_starting_coins = 2.0
+spawn_base_gain = 0.6
+spawn_gain_increment = 0.5
+on_spawn_cooldown_scaling = 0.5
+on_spawn_cooldown_min = 0.4
 spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5"), ExtResource("8_cyw1b"), ExtResource("9_pbor5")])
 

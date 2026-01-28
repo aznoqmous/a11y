@@ -21,6 +21,7 @@ func _ready():
 		alert_spawns[index].add_child(alert)
 		alert.position = Vector2.LEFT.rotated(randf() * TAU) * randf() * 30.0
 	)
+	player.arrow_container.scale.y = -get_access_direction()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Up"):

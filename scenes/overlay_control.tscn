@@ -16,7 +16,7 @@ font_size = 54
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
-[node name="OverlayControl" type="CanvasLayer" unique_id=974230054]
+[node name="OverlayLayer" type="CanvasLayer" unique_id=974230054]
 script = ExtResource("1_4o452")
 
 [node name="Control" type="Control" parent="." unique_id=1117718275]

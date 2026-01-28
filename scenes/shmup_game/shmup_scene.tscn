@@ -13,9 +13,21 @@
 [ext_resource type="Texture2D" uid="uid://cv3t8mjnk823p" path="res://sprites/shmup_game/shmup-player.PNG" id="7_fm4q6"]
 [ext_resource type="Resource" uid="uid://du6yoohm1j47w" path="res://resources/shmup_game/vessel.tres" id="7_gcbj8"]
 [ext_resource type="Resource" uid="uid://d2i6ppqqoft0y" path="res://resources/shmup_game/asteroid.tres" id="9_hd3y3"]
+[ext_resource type="Script" uid="uid://dufeqbwpxrd2v" path="res://scripts/transition_layer.gd" id="13_61vv6"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="13_e76ee"]
+[ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="14_61vv6"]
+[ext_resource type="Texture2D" uid="uid://bgytcuf7k85ry" path="res://sprites/nine-patch.png" id="14_rabti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm4q6"]
 size = Vector2(97, 34)
+
+[sub_resource type="LabelSettings" id="LabelSettings_61vv6"]
+font = ExtResource("13_e76ee")
+font_size = 87
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lq1jr"]
 
 [node name="ShmupScene" type="Node2D" unique_id=2144564765]
 script = ExtResource("1_gcbj8")
@@ -25,6 +37,14 @@ star_score_scene = ExtResource("2_hd3y3")
 
 [node name="Decor" type="Node2D" parent="." unique_id=1566733529]
 position = Vector2(627, 211)
+
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=154272212]
+repeat_size = Vector2(350, 350)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
+position = Vector2(-163, 109)
+texture = ExtResource("5_xh4ap")
 
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=603731524]
 repeat_size = Vector2(256, 0)
@@ -97,3 +117,88 @@ position = Vector2(253, 238)
 
 [node name="Lane6" type="Node2D" parent="Spawner/Spawns" unique_id=1667206996]
 position = Vector2(253, 438)
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1754928915]
+visible = false
+script = ExtResource("13_61vv6")
+
+[node name="Control" type="Control" parent="TransitionLayer" unique_id=1601892530]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="TransitionLayer/Control" unique_id=115210239]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TransitionLayer/Control" unique_id=366914543]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -44.0
+offset_right = 224.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wooooowzers"
+label_settings = SubResource("LabelSettings_61vv6")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="TransitionLayer/Control" unique_id=1334627272]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = 54.0
+offset_right = 117.5
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_e76ee")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lq1jr")
+text = "Continue"
+
+[node name="MarginContainer" type="MarginContainer" parent="TransitionLayer/Control/Button" unique_id=1054186865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -13.0
+offset_right = 27.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileScaleContainer" type="Container" parent="TransitionLayer/Control/Button/MarginContainer" unique_id=401808547]
+layout_mode = 2
+script = ExtResource("14_61vv6")
+tile_scale = 0.38
+
+[node name="Panel" type="NinePatchRect" parent="TransitionLayer/Control/Button/MarginContainer/TileScaleContainer" unique_id=935148183]
+modulate = Color(0.9140625, 0.28207397, 0.28207397, 1)
+z_index = -1
+layout_mode = 2
+texture = ExtResource("14_rabti")
+region_rect = Rect2(0, 0, 311, 316)
+patch_margin_left = 100
+patch_margin_top = 98
+patch_margin_right = 94
+patch_margin_bottom = 102

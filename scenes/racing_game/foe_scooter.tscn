@@ -18,7 +18,6 @@ shape = SubResource("RectangleShape2D_2hx22")
 
 [node name="ScoreStar" parent="." unique_id=560807434 instance=ExtResource("3_w6yt6")]
 position = Vector2(132, 0)
-scale = Vector2(0.5, 0.5)
 
 [node name="SpriteContainer" type="Node2D" parent="." unique_id=1661702322]
 
