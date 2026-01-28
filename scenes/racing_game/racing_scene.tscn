@@ -77,9 +77,11 @@ texture = ExtResource("7_15qfb")
 [node name="Spawner" type="Node2D" parent="." unique_id=83535741 node_paths=PackedStringArray("spawn_parent", "spawn_points")]
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
-spawn_starting_coins = 4.0
-spawn_base_gain = 0.8
-spawn_gain_increment = 0.3
+spawn_starting_coins = 2.0
+spawn_base_gain = 0.6
+spawn_gain_increment = 0.5
+on_spawn_cooldown_scaling = 0.5
+on_spawn_cooldown_min = 0.4
 spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5"), ExtResource("8_cyw1b"), ExtResource("9_pbor5")])
 
