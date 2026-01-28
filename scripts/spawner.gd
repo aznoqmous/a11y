@@ -6,6 +6,8 @@ class_name Spawner extends Node2D
 @export var spawn_base_gain := 0.3
 @export var spawn_gain_increment := 0.1
 @export var on_spawn_cooldown := 1.0
+@export var on_spawn_cooldown_scaling := 0.1
+@export var on_spawn_cooldown_min := 0.2
 @export var spawn_points : Array[Node2D]
 @export var spawned_resources : Array[SpawnedResource]
 
@@ -22,6 +24,7 @@ func _process(delta):
 	coins += delta * spawn_base_gain
 	spawn_time -= delta
 	spawn_gain += spawn_gain_increment * delta
+	on_spawn_cooldown = max(on_spawn_cooldown_min, on_spawn_cooldown * (1.0 - on_spawn_cooldown_scaling * delta))
 	if spawn_time < 0:
 		spawn()
 		

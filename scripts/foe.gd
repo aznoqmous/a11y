@@ -1,7 +1,8 @@
 class_name Foe extends Area2D
 
-@export var speed: Vector2 = Vector2.LEFT
 @export var max_health := 1.0
+@export var speed: Vector2 = Vector2.LEFT
+@export var speed_scaling := 0.01
 
 @export var rotation_speed := 0.0
 @export_range(0.0, 1.0, 0.1) var rotation_speed_random := 0.0
@@ -25,6 +26,7 @@ func _ready():
 	if rotation_speed > 0: rotate(randf() * TAU);
 
 func _process(delta: float) -> void:
+	speed *= 1.0 + speed_scaling
 	position += delta * speed
 	sprite_container.scale = lerp(sprite_container.scale, Vector2.ONE, delta * 5.0)
 	sprite_container.rotate(rotation_speed * TAU * delta)

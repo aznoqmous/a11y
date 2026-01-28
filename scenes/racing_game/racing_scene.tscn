@@ -18,7 +18,6 @@
 radius = 53.338543
 
 [node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes", "alert_spawns")]
-y_sort_enabled = true
 script = ExtResource("1_ovyp3")
 lanes = [NodePath("Lanes/Lane1"), NodePath("Lanes/Lane2"), NodePath("Lanes/Lane3")]
 alert_spawns = [NodePath("Alerts/Lane1"), NodePath("Alerts/Lane2"), NodePath("Alerts/Lane3")]
@@ -45,6 +44,7 @@ texture = ExtResource("2_26ryi")
 
 [node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
 repeat_size = Vector2(350, 350)
+autoscroll = Vector2(-200, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
