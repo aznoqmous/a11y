@@ -98,6 +98,7 @@ position = Vector2(253, 328)
 position = Vector2(253, 528)
 
 [node name="Alerts" type="Node2D" parent="." unique_id=584211520]
+top_level = true
 
 [node name="Lane1" type="Node2D" parent="Alerts" unique_id=1177180008]
 position = Vector2(1059, 128)
