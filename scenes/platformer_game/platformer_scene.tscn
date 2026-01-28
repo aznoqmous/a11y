@@ -6,9 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c72dhxt20s1je" path="res://sprites/platformer_game/platformer-player.png" id="4_j34ms"]
 [ext_resource type="Script" uid="uid://bt3mwlrpnfcfa" path="res://scripts/platformer_game/platform.gd" id="5_ffo1l"]
 [ext_resource type="Texture2D" uid="uid://hyh3jftlmogi" path="res://sprites/rect.png" id="5_fljem"]
+[ext_resource type="Script" uid="uid://7r8uo8q3g3f" path="res://scripts/win_zone.gd" id="7_mifp7"]
+[ext_resource type="Texture2D" uid="uid://dbppa2sp3ffax" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s7k25"]
-radius = 53.338543
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mifp7"]
+radius = 21.0
+height = 82.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j34ms"]
 resource_local_to_scene = true
@@ -22,7 +25,10 @@ size = Vector2(390.625, 254.54688)
 resource_local_to_scene = true
 size = Vector2(390.625, 278)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mifp7"]
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ffo1l"]
+normal = Vector2(-1, 0)
 
 [node name="PlatformerScene" type="Node2D" unique_id=1701240198]
 script = ExtResource("1_2dopb")
@@ -54,7 +60,7 @@ script = ExtResource("3_j34ms")
 texture = ExtResource("4_j34ms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1682444645]
-shape = SubResource("CircleShape2D_s7k25")
+shape = SubResource("CapsuleShape2D_mifp7")
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=655010018]
 position = Vector2(382, 502)
@@ -99,4 +105,14 @@ shape = SubResource("RectangleShape2D_s7k25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=181030800]
 position = Vector2(0, 650)
+shape = SubResource("WorldBoundaryShape2D_mifp7")
+
+[node name="WinZone" type="Area2D" parent="." unique_id=465174945]
+position = Vector2(1305, 199)
+script = ExtResource("7_mifp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=1404338133]
 shape = SubResource("WorldBoundaryShape2D_ffo1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="WinZone" unique_id=1561140012]
+texture = ExtResource("7_s7k25")
