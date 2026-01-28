@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://btg8ub00hvowe"]
+
+[ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_2hx22"]
+[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="2_w6yt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hx22"]
+size = Vector2(58, 34)
+
+[node name="FoeScooter" type="Area2D" unique_id=2070314878]
+collision_layer = 2
+script = ExtResource("1_2hx22")
+speed = Vector2(-300, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
+modulate = Color(1, 0.13333334, 1, 1)
+position = Vector2(3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.4765625, 0.4765625)
+texture = ExtResource("2_w6yt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_2hx22")
