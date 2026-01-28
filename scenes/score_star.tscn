@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq7cbt6vryk2x"]
 
-[ext_resource type="Texture2D" uid="uid://bugo2wk3tx850" path="res://sprites/star.png" id="1_p6aby"]
 [ext_resource type="Script" uid="uid://bj7r8qydrrtr0" path="res://scripts/score_star.gd" id="1_ptbff"]
+[ext_resource type="Texture2D" uid="uid://dp8naxx8rtb2q" path="res://sprites/platformer_game/Collectible.PNG" id="2_ptbff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptbff"]
 radius = 25.495098
@@ -14,6 +14,7 @@ script = ExtResource("1_ptbff")
 modulate = Color(1, 0.8901961, 0.047058824, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_p6aby")
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=963461903]
 shape = SubResource("CircleShape2D_ptbff")

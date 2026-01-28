@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6kdaceinlrf"
-path="res://.godot/imported/racing-road-stripes.PNG-03e7a3c64970acee5d80b7f8ab6b8c3b.ctex"
+uid="uid://cxn2w4v8h8de5"
+path="res://.godot/imported/Background-Parallax-1.PNG-aff1b28fe1aaf076172d633f0628f5f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/racing_game/racing-road-stripes.PNG"
-dest_files=["res://.godot/imported/racing-road-stripes.PNG-03e7a3c64970acee5d80b7f8ab6b8c3b.ctex"]
+source_file="res://sprites/shmup_game/Background-Parallax-1.PNG"
+dest_files=["res://.godot/imported/Background-Parallax-1.PNG-aff1b28fe1aaf076172d633f0628f5f3.ctex"]
 
 [params]
 
