@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://biuxetsnl0dh6" path="res://sprites/shmup_game/shmup-parallax-1.png" id="1_b5ph2"]
 [ext_resource type="Script" uid="uid://b6aoctpc5swc" path="res://scripts/shmup_game/shmup_scene.gd" id="1_gcbj8"]
+[ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="2_hd3y3"]
 [ext_resource type="Texture2D" uid="uid://crlum0dhf807y" path="res://sprites/shmup_game/shmup-player.png" id="3_b5ph2"]
 [ext_resource type="Script" uid="uid://dhhtmm6flx55i" path="res://scripts/shmup_game/shmup_player.gd" id="3_gcbj8"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="4_hd3y3"]
@@ -10,10 +11,11 @@
 [ext_resource type="Resource" uid="uid://du6yoohm1j47w" path="res://resources/shmup_game/vessel.tres" id="7_gcbj8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xh4ap"]
-radius = 53.338543
+radius = 27.073973
 
 [node name="ShmupScene" type="Node2D" unique_id=2144564765]
 script = ExtResource("1_gcbj8")
+star_score_scene = ExtResource("2_hd3y3")
 
 [node name="Decor" type="Node2D" parent="." unique_id=1566733529]
 position = Vector2(627, 211)

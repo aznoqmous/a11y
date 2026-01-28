@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cw1v57xa6f8fi"]
+
+[ext_resource type="Script" uid="uid://xreeim4tf8cm" path="res://scripts/overlay_control.gd" id="1_4o452"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="1_lwwvb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4o452"]
+font = ExtResource("1_lwwvb")
+font_size = 32
+font_color = Color(0.62967473, 0.62967473, 0.6296747, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sojl8"]
+font = ExtResource("1_lwwvb")
+font_size = 54
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="OverlayControl" type="Control" unique_id=863188350]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4o452")
+
+[node name="Label" type="Label" parent="." unique_id=935127437]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 77.0
+offset_bottom = 38.0
+text = "Score"
+label_settings = SubResource("LabelSettings_4o452")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1847870097]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 133.0
+offset_bottom = 93.0
+text = "8563"
+label_settings = SubResource("LabelSettings_sojl8")

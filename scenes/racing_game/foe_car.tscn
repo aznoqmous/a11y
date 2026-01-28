@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_1wrwt"]
 [ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="2_gm8fw"]
+[ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="3_gm8fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrwt"]
 size = Vector2(122, 66)
@@ -16,3 +17,11 @@ texture = ExtResource("2_gm8fw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 shape = SubResource("RectangleShape2D_1wrwt")
+
+[node name="ScoreStar" parent="." unique_id=560807434 instance=ExtResource("3_gm8fw")]
+position = Vector2(132, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ScoreStar2" parent="." unique_id=2132658997 instance=ExtResource("3_gm8fw")]
+position = Vector2(222, 0)
+scale = Vector2(0.5, 0.5)

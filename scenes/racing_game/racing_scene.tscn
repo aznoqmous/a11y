@@ -52,8 +52,8 @@ shape = SubResource("CircleShape2D_rgbw8")
 [node name="Spawner" type="Node2D" parent="." unique_id=83535741 node_paths=PackedStringArray("spawn_parent", "spawn_points")]
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
-spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawn_base_gain = 0.8
+spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5"), ExtResource("8_cyw1b"), ExtResource("9_pbor5")])
 
 [node name="Spawns" type="Node2D" parent="Spawner" unique_id=864102401]

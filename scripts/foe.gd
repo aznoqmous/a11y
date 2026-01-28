@@ -40,4 +40,7 @@ func fire():
 	pass
 
 func die():
+	on_death.emit()
 	queue_free()
+
+signal on_death()
