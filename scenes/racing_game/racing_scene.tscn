@@ -53,6 +53,8 @@ shape = SubResource("CircleShape2D_rgbw8")
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
 spawn_base_gain = 0.8
+spawn_starting_coins = 4.0
+spawn_gain_increment = 0.3
 spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5"), ExtResource("8_cyw1b"), ExtResource("9_pbor5")])
 
