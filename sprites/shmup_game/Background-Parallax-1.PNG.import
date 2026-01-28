@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca55kp4ucwlo2"
-path="res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"
+uid="uid://cxn2w4v8h8de5"
+path="res://.godot/imported/Background-Parallax-1.PNG-aff1b28fe1aaf076172d633f0628f5f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/platformer_game/platformer-player.PNG"
-dest_files=["res://.godot/imported/platformer-player.PNG-6bab0dcaaaccc79335b84bb80da11478.ctex"]
+source_file="res://sprites/shmup_game/Background-Parallax-1.PNG"
+dest_files=["res://.godot/imported/Background-Parallax-1.PNG-aff1b28fe1aaf076172d633f0628f5f3.ctex"]
 
 [params]
 
