@@ -8,7 +8,7 @@ func _ready() -> void:
 		GameManager.gain_score(1)
 		queue_free()
 	)
-	area_entered.connect(func(area: RigidBody2D):
+	body_entered.connect(func(area: Node2D):
 		GameManager.gain_score(1)
 		queue_free()
 	)

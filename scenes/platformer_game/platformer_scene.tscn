@@ -40,6 +40,14 @@ position = Vector2(424, 204)
 [node name="Decor" type="Node2D" parent="." unique_id=1385626041]
 position = Vector2(627, 211)
 
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=1667707268]
+repeat_size = Vector2(350, 350)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
+position = Vector2(-163, 109)
+texture = ExtResource("4_dvn4p")
+
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=1839759433]
 repeat_size = Vector2(256, 0)
 repeat_times = 20
@@ -48,14 +56,6 @@ follow_viewport = false
 [node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1962132458]
 position = Vector2(0, 310)
 texture = ExtResource("2_j34ms")
-
-[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=1667707268]
-repeat_size = Vector2(350, 350)
-repeat_times = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
-position = Vector2(-163, 109)
-texture = ExtResource("4_dvn4p")
 
 [node name="World" type="Node2D" parent="." unique_id=1490610673]
 y_sort_enabled = true
@@ -80,71 +80,54 @@ shape = SubResource("CapsuleShape2D_mifp7")
 
 [node name="ScoreStar" parent="World/Collectibles" unique_id=560807434 instance=ExtResource("10_i6eov")]
 position = Vector2(776, 267)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar2" parent="World/Collectibles" unique_id=875627028 instance=ExtResource("10_i6eov")]
 position = Vector2(776, 171)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar3" parent="World/Collectibles" unique_id=1778402426 instance=ExtResource("10_i6eov")]
 position = Vector2(498, 303)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar4" parent="World/Collectibles" unique_id=1280663672 instance=ExtResource("10_i6eov")]
 position = Vector2(1020, 395)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar5" parent="World/Collectibles" unique_id=393029770 instance=ExtResource("10_i6eov")]
 position = Vector2(1624, 276)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar6" parent="World/Collectibles" unique_id=459329249 instance=ExtResource("10_i6eov")]
 position = Vector2(1818, 359)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar7" parent="World/Collectibles" unique_id=1216580733 instance=ExtResource("10_i6eov")]
 position = Vector2(1894, 359)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar8" parent="World/Collectibles" unique_id=1399631123 instance=ExtResource("10_i6eov")]
 position = Vector2(1968, 359)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar9" parent="World/Collectibles" unique_id=2135445545 instance=ExtResource("10_i6eov")]
 position = Vector2(2208, 247)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar10" parent="World/Collectibles" unique_id=2026667769 instance=ExtResource("10_i6eov")]
 position = Vector2(2594, 202)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar11" parent="World/Collectibles" unique_id=1399793101 instance=ExtResource("10_i6eov")]
 position = Vector2(3044, 94)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar12" parent="World/Collectibles" unique_id=335743155 instance=ExtResource("10_i6eov")]
 position = Vector2(3213, 124)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar13" parent="World/Collectibles" unique_id=315376513 instance=ExtResource("10_i6eov")]
 position = Vector2(3213, 49)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar14" parent="World/Collectibles" unique_id=1225663674 instance=ExtResource("10_i6eov")]
 position = Vector2(3213, -22)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar15" parent="World/Collectibles" unique_id=642486573 instance=ExtResource("10_i6eov")]
 position = Vector2(3395, 52)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar16" parent="World/Collectibles" unique_id=1794944324 instance=ExtResource("10_i6eov")]
 position = Vector2(3472, 48)
-scale = Vector2(0.6, 0.6)
 
 [node name="ScoreStar17" parent="World/Collectibles" unique_id=83768313 instance=ExtResource("10_i6eov")]
 position = Vector2(3563, 49)
-scale = Vector2(0.6, 0.6)
 
 [node name="Platforms" type="Node2D" parent="World" unique_id=524195167]
 
