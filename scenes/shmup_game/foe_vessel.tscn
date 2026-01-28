@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://csdvifrycelra"]
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_je138"]
-[ext_resource type="Texture2D" uid="uid://ceou7wwsu71cm" path="res://sprites/shmup_game/shmup-vessel-1.png" id="2_eq0s1"]
 [ext_resource type="PackedScene" uid="uid://cfd7crw1aflmp" path="res://scenes/shmup_game/foe_bullet.tscn" id="2_jnkde"]
+[ext_resource type="Texture2D" uid="uid://rmd2ry1ps4qv" path="res://sprites/shmup_game/shmup-foe-1.PNG" id="3_jnkde"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
 radius = 43.046486
@@ -22,4 +22,6 @@ shape = SubResource("CircleShape2D_tuqxm")
 [node name="SpriteContainer" type="Node2D" parent="." unique_id=610034430]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
-texture = ExtResource("2_eq0s1")
+modulate = Color(0.92835474, 1.4612638, 0, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_jnkde")

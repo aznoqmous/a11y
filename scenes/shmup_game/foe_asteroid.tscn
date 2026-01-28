@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_wmmmj"]
 [ext_resource type="PackedScene" uid="uid://cfd7crw1aflmp" path="res://scenes/shmup_game/foe_bullet.tscn" id="2_7ucxo"]
-[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="3_wmmmj"]
+[ext_resource type="Texture2D" uid="uid://f6007ccj3ahm" path="res://sprites/shmup_game/shmup-obstacle.PNG" id="3_wmmmj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
 radius = 190.44421
@@ -22,6 +22,6 @@ shape = SubResource("CircleShape2D_tuqxm")
 [node name="SpriteContainer" type="Node2D" parent="." unique_id=521231078]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
-modulate = Color(0.23137255, 0.078431375, 1, 1)
-scale = Vector2(3.23, 3.23)
+modulate = Color(1.3348083, 1.1721189, 1.0772169, 1)
+scale = Vector2(0.671875, 0.67187506)
 texture = ExtResource("3_wmmmj")

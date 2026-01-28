@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ce1awpopy3v7s"]
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_vc7ey"]
-[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="2_nn756"]
+[ext_resource type="Texture2D" uid="uid://djl7i62dgh2ph" path="res://sprites/racing_game/racing-foe-large.PNG" id="3_huola"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="3_nn756"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vc7ey"]
@@ -34,6 +34,7 @@ scale = Vector2(0.5, 0.5)
 [node name="SpriteContainer" type="Node2D" parent="." unique_id=1424817762]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(1.9609375, 1.9609375)
-texture = ExtResource("2_nn756")
+modulate = Color(1.5291448, 0.9598983, 0, 1)
+position = Vector2(18, 0)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_huola")
