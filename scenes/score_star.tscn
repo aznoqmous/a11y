@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bj7r8qydrrtr0" path="res://scripts/score_star.gd" id="1_ptbff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptbff"]
-radius = 40.0
+radius = 25.495098
 
 [node name="ScoreStar" type="Area2D" unique_id=560807434]
 collision_layer = 4
@@ -12,6 +12,7 @@ script = ExtResource("1_ptbff")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=473457480]
 modulate = Color(1, 0.8901961, 0.047058824, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_p6aby")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=963461903]

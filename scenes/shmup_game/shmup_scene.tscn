@@ -37,6 +37,14 @@ star_score_scene = ExtResource("2_hd3y3")
 [node name="Decor" type="Node2D" parent="." unique_id=1566733529]
 position = Vector2(627, 211)
 
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=154272212]
+repeat_size = Vector2(350, 350)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
+position = Vector2(-163, 109)
+texture = ExtResource("5_xh4ap")
+
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=603731524]
 repeat_size = Vector2(256, 0)
 autoscroll = Vector2(-300, 0)
@@ -46,14 +54,6 @@ follow_viewport = false
 [node name="Sprite2D" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1615062805]
 position = Vector2(0, 310)
 texture = ExtResource("1_b5ph2")
-
-[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=154272212]
-repeat_size = Vector2(350, 350)
-repeat_times = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
-position = Vector2(-163, 109)
-texture = ExtResource("5_xh4ap")
 
 [node name="World" type="Node2D" parent="." unique_id=1254015018]
 y_sort_enabled = true

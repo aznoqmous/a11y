@@ -28,6 +28,15 @@ alert_scene = ExtResource("2_pbor5")
 [node name="Decor" type="Node2D" parent="." unique_id=1000481696]
 position = Vector2(627, 211)
 
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
+repeat_size = Vector2(350, 350)
+autoscroll = Vector2(-200, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
+position = Vector2(-163, 109)
+texture = ExtResource("5_15qfb")
+
 [node name="Parallax2D" type="Parallax2D" parent="Decor" unique_id=2117951092]
 repeat_size = Vector2(256, 0)
 autoscroll = Vector2(-300, 0)
@@ -41,15 +50,6 @@ texture = ExtResource("2_26ryi")
 [node name="Sprite2D2" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1881290777]
 position = Vector2(0, 211)
 texture = ExtResource("2_26ryi")
-
-[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
-repeat_size = Vector2(350, 350)
-autoscroll = Vector2(-200, 0)
-repeat_times = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
-position = Vector2(-163, 109)
-texture = ExtResource("5_15qfb")
 
 [node name="World" type="Node2D" parent="." unique_id=1133602282]
 y_sort_enabled = true
