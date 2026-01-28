@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
 [ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="5_cyw1b"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
+[ext_resource type="Texture2D" uid="uid://6lhywupstx82" path="res://sprites/racing_game/arrow.png" id="7_15qfb"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="7_p06tx"]
 [ext_resource type="Resource" uid="uid://cuar3jfc1lprd" path="res://resources/racing_game/car.tres" id="8_6p6p5"]
 [ext_resource type="Resource" uid="uid://ctxfg2mg388y0" path="res://resources/racing_game/school_bus.tres" id="8_cyw1b"]
@@ -56,6 +57,13 @@ texture = ExtResource("5_cyw1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1766896921]
 shape = SubResource("CircleShape2D_rgbw8")
+
+[node name="ArrowContainer" type="Node2D" parent="World/Player" unique_id=931111098]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Player/ArrowContainer" unique_id=115097425]
+position = Vector2(0, -106)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_15qfb")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=83535741 node_paths=PackedStringArray("spawn_parent", "spawn_points")]
 script = ExtResource("6_pbor5")

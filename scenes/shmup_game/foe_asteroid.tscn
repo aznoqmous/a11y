@@ -5,13 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://f6007ccj3ahm" path="res://sprites/shmup_game/shmup-obstacle.PNG" id="3_wmmmj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
-radius = 190.44421
+radius = 85.146935
 
 [node name="FoeAsteroid" type="Area2D" unique_id=2070314878]
 collision_layer = 2
 script = ExtResource("1_wmmmj")
 speed = Vector2(-100, 0)
 max_health = 10.0
+rotation_speed = 1.0
+rotation_speed_random = 1.0
 bullet_scene = ExtResource("2_7ucxo")
 bullet_speed = 300.0
 fire_cooldown = 0.0
@@ -23,5 +25,6 @@ shape = SubResource("CircleShape2D_tuqxm")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=510771067]
 modulate = Color(1.3348083, 1.1721189, 1.0772169, 1)
+position = Vector2(-14.000002, 5.0000005)
 scale = Vector2(0.671875, 0.67187506)
 texture = ExtResource("3_wmmmj")
