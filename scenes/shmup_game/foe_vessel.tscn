@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_je138"]
 [ext_resource type="Texture2D" uid="uid://ceou7wwsu71cm" path="res://sprites/shmup_game/shmup-vessel-1.png" id="2_eq0s1"]
+[ext_resource type="PackedScene" uid="uid://cfd7crw1aflmp" path="res://scenes/shmup_game/foe_bullet.tscn" id="2_jnkde"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
 radius = 43.046486
@@ -11,6 +12,8 @@ collision_layer = 2
 script = ExtResource("1_je138")
 speed = Vector2(-100, 0)
 max_health = 3.0
+bullet_scene = ExtResource("2_jnkde")
+bullet_speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
 texture = ExtResource("2_eq0s1")
