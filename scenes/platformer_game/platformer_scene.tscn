@@ -59,6 +59,7 @@ texture = ExtResource("4_dvn4p")
 
 [node name="World" type="Node2D" parent="." unique_id=1490610673]
 y_sort_enabled = true
+position = Vector2(0, -93.93)
 
 [node name="Player" type="CharacterBody2D" parent="World" unique_id=920313295]
 position = Vector2(261, 322)
@@ -149,6 +150,7 @@ scale = Vector2(0.6, 0.6)
 [node name="Platforms" type="Node2D" parent="World" unique_id=524195167]
 
 [node name="Platform" type="StaticBody2D" parent="World/Platforms" unique_id=655010018]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(382, 502)
 script = ExtResource("5_ffo1l")
 
@@ -162,6 +164,7 @@ position = Vector2(-192.65625, 137.68164)
 shape = SubResource("RectangleShape2D_j34ms")
 
 [node name="Platform2" type="StaticBody2D" parent="World/Platforms" unique_id=663501060]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(519, 732)
 scale = Vector2(0.7518312, 1.1885504)
 script = ExtResource("5_ffo1l")
@@ -178,6 +181,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform4" type="StaticBody2D" parent="World/Platforms" unique_id=1130342718]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(769, 580)
 scale = Vector2(0.7518312, 1.8626219)
 script = ExtResource("5_ffo1l")
@@ -194,6 +198,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform5" type="StaticBody2D" parent="World/Platforms" unique_id=2053406508]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(1345.9999, 662.9999)
 rotation = 1.4309952
 scale = Vector2(0.7518312, 1.43249)
@@ -211,6 +216,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform6" type="StaticBody2D" parent="World/Platforms" unique_id=903388220]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(1873, 453)
 scale = Vector2(0.7518312, 0.58262193)
 script = ExtResource("5_ffo1l")
@@ -227,6 +233,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform7" type="StaticBody2D" parent="World/Platforms" unique_id=833044417]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(2375, 374.99997)
 scale = Vector2(0.3933546, 0.261649)
 script = ExtResource("5_ffo1l")
@@ -243,6 +250,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform8" type="StaticBody2D" parent="World/Platforms" unique_id=412033685]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(2792, 313.99997)
 scale = Vector2(0.3933546, 0.261649)
 script = ExtResource("5_ffo1l")
@@ -259,6 +267,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform9" type="StaticBody2D" parent="World/Platforms" unique_id=347033855]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(3212, 219)
 scale = Vector2(0.3933546, 0.261649)
 script = ExtResource("5_ffo1l")
@@ -275,6 +284,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform10" type="StaticBody2D" parent="World/Platforms" unique_id=1972201706]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(3258, 632.99994)
 rotation = 0.096486256
 scale = Vector2(0.7670899, 1.287811)
@@ -292,6 +302,7 @@ shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
 [node name="Platform11" type="StaticBody2D" parent="World/Platforms" unique_id=664412549]
+modulate = Color(0.7081116, 0.44032282, 0.23344588, 1)
 position = Vector2(3784.0002, 416.00003)
 rotation = 3.1415927
 scale = Vector2(0.5438798, -0.13177204)
@@ -315,7 +326,7 @@ position = Vector2(0, 650)
 shape = SubResource("WorldBoundaryShape2D_mifp7")
 
 [node name="WinZone" type="Area2D" parent="." unique_id=465174945]
-position = Vector2(3851, 365)
+position = Vector2(3851, 269.65)
 script = ExtResource("7_mifp7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=1404338133]
