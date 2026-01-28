@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqcwi7ox16sg0"]
+
+[ext_resource type="Texture2D" uid="uid://bwk2d4p3qwwy8" path="res://sprites/alert.png" id="1_fgr6v"]
+[ext_resource type="Script" uid="uid://ct8lvntguak5b" path="res://scripts/alert.gd" id="1_hrwfd"]
+
+[node name="Alert" type="Node2D" unique_id=1424858145]
+script = ExtResource("1_hrwfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360828857]
+modulate = Color(1, 0.18463135, 0.14453125, 1)
+texture = ExtResource("1_fgr6v")

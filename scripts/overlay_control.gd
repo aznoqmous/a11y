@@ -1,6 +1,6 @@
-class_name OverlayControl extends Control
+class_name OverlayControl extends CanvasLayer
 
-@onready var score_label: Label = $ScoreLabel
+@onready var score_label: Label = $Control/ScoreLabel
 
 func _ready() -> void:
 	score_label.text = str(GameManager.score)

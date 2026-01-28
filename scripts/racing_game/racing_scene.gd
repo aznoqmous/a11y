@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var lanes : Array[Node2D]
+@export var alert_spawns : Array[Node2D]
+@export var alert_scene : PackedScene
 
 var selected_lane_index = 1
 var selected_lane : Node2D :
@@ -13,6 +15,12 @@ var access_direction = 1
 @onready var world: Node2D = $World
 @onready var parallax_2d: Parallax2D = $Decor/Parallax2D
 
+func _ready():
+	spawner.on_spawn.connect(func(foe, index):
+		var alert = alert_scene.instantiate()
+		alert_spawns[index].add_child(alert)
+		alert.position = Vector2.LEFT.rotated(randf() * TAU) * randf() * 30.0
+	)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Up"):
