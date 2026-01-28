@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
+[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/platformer_game/Background.png" id="5_15qfb"]
 [ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="5_cyw1b"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="7_p06tx"]
@@ -40,6 +41,14 @@ texture = ExtResource("2_26ryi")
 [node name="Sprite2D2" type="Sprite2D" parent="Decor/Parallax2D" unique_id=1881290777]
 position = Vector2(0, 211)
 texture = ExtResource("2_26ryi")
+
+[node name="BackgroundParallax" type="Parallax2D" parent="Decor" unique_id=265795801]
+repeat_size = Vector2(350, 350)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
+position = Vector2(-163, 109)
+texture = ExtResource("5_15qfb")
 
 [node name="World" type="Node2D" parent="." unique_id=1133602282]
 y_sort_enabled = true
