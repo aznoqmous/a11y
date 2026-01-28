@@ -4,13 +4,11 @@ class_name ScoreStar extends Area2D
 
 func _ready() -> void:
 	area_entered.connect(func(area: Area2D):
+		if area is PlayerBullet: return; # a la zob
 		GameManager.gain_score(1)
 		queue_free()
 	)
-	body_entered.connect(func(body: Node2D):
-		GameManager.gain_score(1)
-		queue_free()
-	)
+
 	sprite_2d.rotate(randf() * PI)
 
 func _process(delta: float) -> void:
