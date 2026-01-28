@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ce1awpopy3v7s"]
+
+[ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_vc7ey"]
+[ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="2_nn756"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc7ey"]
+size = Vector2(296, 163)
+
+[node name="FoeSchoolBus" type="Area2D" unique_id=2070314878]
+collision_layer = 2
+script = ExtResource("1_vc7ey")
+speed = Vector2(-170, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=510771067]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(1.9609375, 1.9609375)
+texture = ExtResource("2_nn756")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
+shape = SubResource("RectangleShape2D_vc7ey")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnedResource" format=3 uid="uid://b1mqnfq0lwu4e"]
+
+[ext_resource type="PackedScene" uid="uid://btg8ub00hvowe" path="res://scenes/racing_game/foe_scooter.tscn" id="1_f1x3g"]
+[ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="2_7xh8s"]
+
+[resource]
+script = ExtResource("2_7xh8s")
+cost = 1.5
+packed_scene = ExtResource("1_f1x3g")
+metadata/_custom_type_script = "uid://bjubkomc0m1mv"

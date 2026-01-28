@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_1wrwt"]
 [ext_resource type="Texture2D" uid="uid://dpn431obxhw3n" path="res://sprites/racing_game/racing-car.png" id="2_gm8fw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tuqxm"]
-radius = 43.046486
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrwt"]
+size = Vector2(122, 66)
 
 [node name="FoeCar" type="Area2D" unique_id=2070314878]
 collision_layer = 2
@@ -15,4 +15,4 @@ speed = Vector2(-200, 0)
 texture = ExtResource("2_gm8fw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
-shape = SubResource("CircleShape2D_tuqxm")
+shape = SubResource("RectangleShape2D_1wrwt")
