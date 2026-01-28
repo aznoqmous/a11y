@@ -3,6 +3,9 @@ class_name Foe extends Area2D
 @export var speed: Vector2 = Vector2.LEFT
 @export var max_health := 1.0
 
+@export var rotation_speed := 0.0
+@export_range(0.0, 1.0, 0.1) var rotation_speed_random := 0.0
+
 @export_category("Bullet")
 @export var bullet_scene : PackedScene
 @export var bullet_speed := 100.0
@@ -18,11 +21,13 @@ var current_health := 0.0
 
 func _ready():
 	current_health = max_health
+	rotation_speed = lerp(rotation_speed, rotation_speed * randf(), rotation_speed_random)
+	if rotation_speed > 0: rotate(randf() * TAU);
 
 func _process(delta: float) -> void:
 	position += delta * speed
 	sprite_container.scale = lerp(sprite_container.scale, Vector2.ONE, delta * 5.0)
-	
+	sprite_container.rotate(rotation_speed * TAU * delta)
 	fire_time -= delta
 	if bullet_scene and fire_cooldown and fire_time < 0:
 		fire_time = fire_cooldown

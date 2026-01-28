@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv3t8mjnk823p"
-path="res://.godot/imported/shmup-player.png-32e05d0834301c7ea1c649b21d0ec10e.ctex"
+uid="uid://6lhywupstx82"
+path="res://.godot/imported/arrow.png-4d3c5d33e849b0727d36e61e117e7af0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shmup_game/shmup-player.png"
-dest_files=["res://.godot/imported/shmup-player.png-32e05d0834301c7ea1c649b21d0ec10e.ctex"]
+source_file="res://sprites/racing_game/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-4d3c5d33e849b0727d36e61e117e7af0.ctex"]
 
 [params]
 

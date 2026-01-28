@@ -25,12 +25,23 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Up"):
 		selected_lane_index = clamp(selected_lane_index - 1, 0, lanes.size() - 1)
+		player.arrow_container.set_visible(false)
+
 	if event.is_action_pressed("Down"):
 		selected_lane_index = clamp(selected_lane_index + 1, 0, lanes.size() - 1)
+		player.arrow_container.set_visible(false)
+		
 	if event.is_action_pressed("Space"):
-		if selected_lane_index + access_direction < 0 or selected_lane_index + access_direction >= lanes.size():
-			access_direction = -access_direction
+		player.arrow_container.set_visible(true)
+		access_direction = get_access_direction()
 		selected_lane_index += access_direction
+		player.arrow_container.scale.y = -get_access_direction()
 
 func _process(delta):
 	player.position = player.position.lerp(selected_lane.position, delta * 10.0)
+
+func get_access_direction():
+	var access_dir = access_direction
+	if selected_lane_index + access_direction < 0 or selected_lane_index + access_direction >= lanes.size():
+		access_dir = -access_dir
+	return access_dir
