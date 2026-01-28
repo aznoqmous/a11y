@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crlum0dhf807y"
-path="res://.godot/imported/shmup-player.png-32e05d0834301c7ea1c649b21d0ec10e.ctex"
+uid="uid://cv3t8mjnk823p"
+path="res://.godot/imported/shmup-player.PNG-1856b71ffd93d7bde619713580eb4768.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shmup_game/shmup-player.png"
-dest_files=["res://.godot/imported/shmup-player.png-32e05d0834301c7ea1c649b21d0ec10e.ctex"]
+source_file="res://sprites/shmup_game/shmup-player.PNG"
+dest_files=["res://.godot/imported/shmup-player.PNG-1856b71ffd93d7bde619713580eb4768.ctex"]
 
 [params]
 
