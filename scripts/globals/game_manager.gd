@@ -11,13 +11,8 @@ var access_animated_background = false
 #When set to true, the green zones in the LD will auto jump
 var access_platformer_magnet = false
 
-var access_platformer_radius_min = 0
-var access_platformer_radius_max = 300
-var access_platformer_radius = 150
-
-var access_platformer_strength_min = 0.01
-var access_platformer_strength_max = 0.075
-var access_platformer_strength_value = 0.03
+var access_platformer_radius = 1
+var access_platformer_strength_value = 0
 
 var custom_colors: bool
 enum Colors {
