@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://djcily835i1nn"]
 
 [ext_resource type="Script" uid="uid://cj8ddmd74xbjq" path="res://scripts/racing_game/racing_scene.gd" id="1_ovyp3"]
-[ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
+[ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.PNG" id="2_26ryi"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_15qfb"]
 [ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="5_cyw1b"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
-[ext_resource type="Texture2D" uid="uid://6lhywupstx82" path="res://sprites/racing_game/arrow.png" id="7_15qfb"]
+[ext_resource type="Texture2D" uid="uid://dvrpea4d607hm" path="res://sprites/racing_game/arrow.png" id="7_15qfb"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="7_p06tx"]
 [ext_resource type="Resource" uid="uid://cuar3jfc1lprd" path="res://resources/racing_game/car.tres" id="8_6p6p5"]
 [ext_resource type="Resource" uid="uid://ctxfg2mg388y0" path="res://resources/racing_game/school_bus.tres" id="8_cyw1b"]
@@ -62,7 +62,7 @@ collision_mask = 2
 script = ExtResource("3_p06tx")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=1043439387]
-modulate = Color(3.0964003, 0, 0, 1)
+modulate = Color(0, 1.3599627, 3.096, 1)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_cyw1b")
 
