@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btg8ub00hvowe"]
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_2hx22"]
-[ext_resource type="AudioStream" uid="uid://sfxdtsthg2wa" path="res://audio/scoot.wav" id="2_3n4ff"]
+[ext_resource type="AudioStream" uid="uid://bxqcd57okqv7p" path="res://audio/Scooter_Honk.ogg" id="2_lg2ry"]
 [ext_resource type="Texture2D" uid="uid://8hlpqwan28ty" path="res://sprites/racing_game/racing-foe-small.PNG" id="3_lg2ry"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="3_w6yt6"]
 
@@ -9,10 +9,10 @@
 size = Vector2(58, 34)
 
 [node name="FoeScooter" type="Area2D" unique_id=2070314878]
-collision_layer = 2
+collision_layer = 258
 script = ExtResource("1_2hx22")
 speed = Vector2(-300, 0)
-audio_description_stream = ExtResource("2_3n4ff")
+audio_description_stream = ExtResource("2_lg2ry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 position = Vector2(-1, -2)

@@ -11,10 +11,9 @@ var current_lane = -1
 
 func init() -> void:
 	racing_scene.spawner.on_spawn.connect(func(foe:Foe, index):
-		if(GameManager.access_audio_description):
-			var foe_scene:AudioDescriptionFoe = audio_description_foe_scene.instantiate()
-			foe_position.add_child(foe_scene)
-			foe_scene.play_sound(lane_sound_array[index],foe.audio_description_stream)
+		var foe_scene:AudioDescriptionFoe = audio_description_foe_scene.instantiate()
+		foe_position.add_child(foe_scene)
+		foe_scene.play_sound(lane_sound_array[index],foe.audio_description_stream)
 	)
 	pass
 

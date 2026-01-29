@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cfgo7rjye8bed"
-path="res://.godot/imported/aaaah.wav-7813742003fa6a8db3897359cf7ab02b.sample"
+uid="uid://bv5v35wvn17ls"
+path="res://.godot/imported/bus.wav-8412ea57a04f6321048002c37eeccea1.sample"
 
 [deps]
 
-source_file="res://audio/aaaah.wav"
-dest_files=["res://.godot/imported/aaaah.wav-7813742003fa6a8db3897359cf7ab02b.sample"]
+source_file="res://audio/access/bus.wav"
+dest_files=["res://.godot/imported/bus.wav-8412ea57a04f6321048002c37eeccea1.sample"]
 
 [params]
 

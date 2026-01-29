@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ce1awpopy3v7s"]
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_vc7ey"]
-[ext_resource type="AudioStream" uid="uid://bv5v35wvn17ls" path="res://audio/bus.wav" id="2_mo5fc"]
+[ext_resource type="AudioStream" uid="uid://dh7oohdcpaxgx" path="res://audio/Truck_Honk.ogg" id="2_huola"]
 [ext_resource type="Texture2D" uid="uid://djl7i62dgh2ph" path="res://sprites/racing_game/racing-foe-large.PNG" id="3_huola"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="3_nn756"]
 
@@ -9,10 +9,10 @@
 size = Vector2(296, 163)
 
 [node name="FoeSchoolBus" type="Area2D" unique_id=2070314878]
-collision_layer = 2
+collision_layer = 258
 script = ExtResource("1_vc7ey")
 speed = Vector2(-170, 0)
-audio_description_stream = ExtResource("2_mo5fc")
+audio_description_stream = ExtResource("2_huola")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 shape = SubResource("RectangleShape2D_vc7ey")
