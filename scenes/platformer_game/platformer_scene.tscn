@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://7r8uo8q3g3f" path="res://scripts/win_zone.gd" id="7_mifp7"]
 [ext_resource type="Texture2D" uid="uid://dxnds7gw0ay84" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="10_i6eov"]
+[ext_resource type="PackedScene" uid="uid://dlg0imgecbvrm" path="res://scenes/platformer_game/jump_collision.tscn" id="11_y8trb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mifp7"]
 radius = 21.0
@@ -306,6 +307,77 @@ position = Vector2(-2.5, -1.8632813)
 shape = SubResource("RectangleShape2D_ffo1l")
 metadata/_edit_lock_ = true
 
+[node name="JumpZones" type="Node2D" parent="World" unique_id=113874945]
+
+[node name="JumpCollision" parent="World/JumpZones" unique_id=2043509517 instance=ExtResource("11_y8trb")]
+position = Vector2(369, 448.93)
+
+[node name="JumpCollision2" parent="World/JumpZones" unique_id=128394123 instance=ExtResource("11_y8trb")]
+position = Vector2(421, 593.93)
+
+[node name="JumpCollision3" parent="World/JumpZones" unique_id=1092585608 instance=ExtResource("11_y8trb")]
+position = Vector2(571, 594.93)
+
+[node name="JumpCollision4" parent="World/JumpZones" unique_id=519108468 instance=ExtResource("11_y8trb")]
+position = Vector2(910, 369.93)
+
+[node name="JumpCollision5" parent="World/JumpZones" unique_id=771747211 instance=ExtResource("11_y8trb")]
+position = Vector2(1448.0001, 467.93)
+rotation = -0.14574291
+
+[node name="JumpCollision6" parent="World/JumpZones" unique_id=1581322898 instance=ExtResource("11_y8trb")]
+position = Vector2(2012, 382.93002)
+
+[node name="JumpCollision7" parent="World/JumpZones" unique_id=1654684972 instance=ExtResource("11_y8trb")]
+position = Vector2(2437, 338.93)
+
+[node name="JumpCollision8" parent="World/JumpZones" unique_id=880857203 instance=ExtResource("11_y8trb")]
+position = Vector2(2855, 278.93)
+
+[node name="JumpCollision9" parent="World/JumpZones" unique_id=584274891 instance=ExtResource("11_y8trb")]
+position = Vector2(3272, 181.93)
+
+[node name="JumpCollision11" parent="World/JumpZones" unique_id=276247772 instance=ExtResource("11_y8trb")]
+position = Vector2(3135, 187.93)
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision12" parent="World/JumpZones" unique_id=1787908006 instance=ExtResource("11_y8trb")]
+position = Vector2(3109, 473.93)
+rotation = 0.12805349
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision18" parent="World/JumpZones" unique_id=1155756885 instance=ExtResource("11_y8trb")]
+position = Vector2(3675.9998, 398.93)
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision13" parent="World/JumpZones" unique_id=1362189229 instance=ExtResource("11_y8trb")]
+position = Vector2(2714.9998, 280.93)
+rotation = 0.036827065
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision14" parent="World/JumpZones" unique_id=670286009 instance=ExtResource("11_y8trb")]
+position = Vector2(2297.9998, 340.93)
+rotation = 0.036827065
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision15" parent="World/JumpZones" unique_id=708559104 instance=ExtResource("11_y8trb")]
+position = Vector2(1716, 384.93)
+rotation = 0.036827065
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision16" parent="World/JumpZones" unique_id=1098097788 instance=ExtResource("11_y8trb")]
+position = Vector2(1186, 506.93)
+rotation = -0.2617994
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision17" parent="World/JumpZones" unique_id=1612879750 instance=ExtResource("11_y8trb")]
+position = Vector2(610, 379.93002)
+scale = Vector2(0.44001955, 0.7600006)
+
+[node name="JumpCollision10" parent="World/JumpZones" unique_id=1077783119 instance=ExtResource("11_y8trb")]
+position = Vector2(3416, 504.93)
+rotation = 0.07649741
+
 [node name="DeathZone" type="Area2D" parent="." unique_id=1737818657]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=181030800]
@@ -323,3 +395,21 @@ shape = SubResource("WorldBoundaryShape2D_ffo1l")
 position = Vector2(1, -21.649994)
 scale = Vector2(0.33203125, 0.30722654)
 texture = ExtResource("7_s7k25")
+
+[connection signal="area_entered" from="World/JumpZones/JumpCollision" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision2" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision3" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision4" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision5" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision6" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision7" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision8" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision9" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision11" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision12" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision13" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision14" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision15" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision16" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision17" to="World/Player" method="_on_jump_collision_area_entered"]
+[connection signal="area_entered" from="World/JumpZones/JumpCollision10" to="World/Player" method="_on_jump_collision_area_entered"]
