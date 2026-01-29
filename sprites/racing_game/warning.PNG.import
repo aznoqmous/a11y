@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxnds7gw0ay84"
-path="res://.godot/imported/flag.PNG-eebc008f2b9e3502131f90d998a6d563.ctex"
+uid="uid://d22rwd2ysr50n"
+path="res://.godot/imported/warning.PNG-f3f4f62726bec89e90ae83aed36cfe3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shmup_game/flag.PNG"
-dest_files=["res://.godot/imported/flag.PNG-eebc008f2b9e3502131f90d998a6d563.ctex"]
+source_file="res://sprites/racing_game/warning.PNG"
+dest_files=["res://.godot/imported/warning.PNG-f3f4f62726bec89e90ae83aed36cfe3c.ctex"]
 
 [params]
 

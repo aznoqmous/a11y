@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bt3mwlrpnfcfa" path="res://scripts/platformer_game/platform.gd" id="5_ffo1l"]
 [ext_resource type="Texture2D" uid="uid://hyh3jftlmogi" path="res://sprites/rect.png" id="5_fljem"]
 [ext_resource type="Script" uid="uid://7r8uo8q3g3f" path="res://scripts/win_zone.gd" id="7_mifp7"]
-[ext_resource type="Texture2D" uid="uid://dbppa2sp3ffax" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
+[ext_resource type="Texture2D" uid="uid://dxnds7gw0ay84" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="10_i6eov"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mifp7"]
@@ -317,4 +317,6 @@ script = ExtResource("7_mifp7")
 shape = SubResource("WorldBoundaryShape2D_ffo1l")
 
 [node name="Sprite2D" type="Sprite2D" parent="WinZone" unique_id=1561140012]
+position = Vector2(1, -21.649994)
+scale = Vector2(0.33203125, 0.30722654)
 texture = ExtResource("7_s7k25")
