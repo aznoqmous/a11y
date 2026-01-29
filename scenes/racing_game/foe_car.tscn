@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://oaq1u7logbak"]
 
 [ext_resource type="Script" uid="uid://cp7esn5isowts" path="res://scripts/foe.gd" id="1_1wrwt"]
+[ext_resource type="AudioStream" uid="uid://bk8dt7t7n8rgu" path="res://audio/car.wav" id="2_cgw0g"]
 [ext_resource type="Texture2D" uid="uid://dgbks1ocr0oek" path="res://sprites/racing_game/racing-foe-medium.PNG" id="3_7h2b6"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="3_gm8fw"]
 
@@ -11,6 +12,7 @@ size = Vector2(122, 66)
 collision_layer = 2
 script = ExtResource("1_1wrwt")
 speed = Vector2(-200, 0)
+audio_description_stream = ExtResource("2_cgw0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004015991]
 shape = SubResource("RectangleShape2D_1wrwt")

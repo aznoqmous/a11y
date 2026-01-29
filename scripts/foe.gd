@@ -11,17 +11,22 @@ class_name Foe extends Area2D
 @export var bullet_scene : PackedScene
 @export var bullet_speed := 100.0
 @export var fire_cooldown := 1.0
+
+@export_category("Access")
+@export var audio_description_stream:AudioStream
+
 var fire_time = 0.0
 var current_speed := Vector2.ZERO
 
 @onready var sprite_container: Node2D = $SpriteContainer
+
 @onready var sprite_2d: Node2D = $SpriteContainer/Sprite2D
 
 var is_alive : bool : 
 	get: return current_health > 0
 	
 var current_health := 0.0
-
+var current_lane
 func _ready():
 	GameManager.set_access_color(sprite_2d, GameManager.Colors.ENEMY)
 	current_speed = speed

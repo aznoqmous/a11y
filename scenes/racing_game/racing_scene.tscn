@@ -4,24 +4,68 @@
 [ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/uis/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
+[ext_resource type="Script" uid="uid://xco1krho6chx" path="res://scenes/racing_game/racing_audio_description.gd" id="3_h61qq"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
-[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_15qfb"]
+[ext_resource type="AudioStream" uid="uid://drukf5fqmmp36" path="res://audio/top.wav" id="4_mbmas"]
+[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/platformer_game/Background.png" id="5_15qfb"]
 [ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="5_cyw1b"]
+[ext_resource type="AudioStream" uid="uid://cquc637qlbck6" path="res://audio/mid.wav" id="5_exm4d"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="6_pbor5"]
+[ext_resource type="AudioStream" uid="uid://dn2xrjd61u40f" path="res://audio/bot.wav" id="6_xuh6x"]
+[ext_resource type="Texture2D" uid="uid://6lhywupstx82" path="res://sprites/racing_game/arrow.png" id="7_15qfb"]
+[ext_resource type="PackedScene" uid="uid://drolnyywjirmm" path="res://scenes/audio_description_foe.tscn" id="7_exm4d"]
 [ext_resource type="Texture2D" uid="uid://dvrpea4d607hm" path="res://sprites/racing_game/arrow.png" id="7_15qfb"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="7_p06tx"]
 [ext_resource type="Resource" uid="uid://cuar3jfc1lprd" path="res://resources/racing_game/car.tres" id="8_6p6p5"]
 [ext_resource type="Resource" uid="uid://ctxfg2mg388y0" path="res://resources/racing_game/school_bus.tres" id="8_cyw1b"]
 [ext_resource type="Resource" uid="uid://b1mqnfq0lwu4e" path="res://resources/racing_game/scooter.tres" id="9_pbor5"]
 
+[sub_resource type="AudioStream" id="AudioStream_h61qq"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgbw8"]
 radius = 53.338543
 
-[node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes", "alert_spawns")]
+[node name="RacingScene" type="Node2D" unique_id=565348677 node_paths=PackedStringArray("lanes", "alert_spawns", "racing_audio_description")]
 script = ExtResource("1_ovyp3")
 lanes = [NodePath("Lanes/Lane1"), NodePath("Lanes/Lane2"), NodePath("Lanes/Lane3")]
 alert_spawns = [NodePath("Alerts/Lane1"), NodePath("Alerts/Lane2"), NodePath("Alerts/Lane3")]
 alert_scene = ExtResource("2_pbor5")
+racing_audio_description = NodePath("RacingAudioDescription")
+
+[node name="RacingAudioDescription" type="Node2D" parent="." unique_id=1796133347 node_paths=PackedStringArray("racing_scene", "audio_description_source", "foe_position")]
+script = ExtResource("3_h61qq")
+racing_scene = NodePath("..")
+audio_description_source = NodePath("AudioBot")
+lane_sound_array = Array[AudioStream]([ExtResource("4_mbmas"), ExtResource("5_exm4d"), ExtResource("6_xuh6x")])
+audio_description_foe_scene = ExtResource("7_exm4d")
+foe_position = NodePath("AudioDescriptionFoeParent")
+
+[node name="AudioBot" type="AudioStreamPlayer2D" parent="RacingAudioDescription" unique_id=1459995611]
+stream = SubResource("AudioStream_h61qq")
+volume_db = -6.088
+max_polyphony = 10
+panning_strength = 50.0
+
+[node name="AudioMid" type="AudioStreamPlayer2D" parent="RacingAudioDescription" unique_id=728857915]
+stream = SubResource("AudioStream_h61qq")
+volume_db = -6.088
+max_polyphony = 10
+panning_strength = 50.0
+
+[node name="AudioTop" type="AudioStreamPlayer2D" parent="RacingAudioDescription" unique_id=1602734824]
+stream = SubResource("AudioStream_h61qq")
+volume_db = -6.088
+max_polyphony = 10
+panning_strength = 50.0
+
+[node name="AudioProximity" type="AudioStreamPlayer2D" parent="RacingAudioDescription" unique_id=1335957169]
+stream = SubResource("AudioStream_h61qq")
+volume_db = -6.088
+max_polyphony = 10
+panning_strength = 50.0
+
+[node name="AudioDescriptionFoeParent" type="Node2D" parent="RacingAudioDescription" unique_id=1255244538]
+position = Vector2(1150, 332)
 
 [node name="OverlayControl" parent="." unique_id=863188350 instance=ExtResource("2_cyw1b")]
 
@@ -80,10 +124,11 @@ texture = ExtResource("7_15qfb")
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
 spawn_starting_coins = 2.0
+spawn_cooldown = 4.0
 spawn_base_gain = 0.6
 spawn_gain_increment = 0.5
 on_spawn_cooldown_scaling = 0.5
-on_spawn_cooldown_min = 0.4
+on_spawn_cooldown_min = 0.1
 spawn_points = [NodePath("Spawns/Lane1"), NodePath("Spawns/Lane2"), NodePath("Spawns/Lane3")]
 spawned_resources = Array[ExtResource("7_p06tx")]([ExtResource("8_6p6p5"), ExtResource("8_cyw1b"), ExtResource("9_pbor5")])
 
