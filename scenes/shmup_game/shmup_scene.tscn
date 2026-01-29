@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/uis/overlay_control.tscn" id="3_fm4q6"]
 [ext_resource type="Script" uid="uid://dhhtmm6flx55i" path="res://scripts/shmup_game/shmup_player.gd" id="3_gcbj8"]
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="4_hd3y3"]
+[ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="4_lq1jr"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="5_f4yiw"]
 [ext_resource type="PackedScene" uid="uid://4hgdrya6rqd5" path="res://scenes/shmup_game/player_bullet.tscn" id="5_sxcim"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_xh4ap"]
@@ -33,6 +34,8 @@ script = ExtResource("1_gcbj8")
 star_score_scene = ExtResource("2_hd3y3")
 
 [node name="OverlayControl" parent="." unique_id=863188350 instance=ExtResource("3_fm4q6")]
+
+[node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("4_lq1jr")]
 
 [node name="Decor" type="Node2D" parent="." unique_id=1566733529]
 position = Vector2(627, 211)
