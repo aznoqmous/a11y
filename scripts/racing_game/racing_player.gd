@@ -25,7 +25,6 @@ func raycast_routine() -> void:
 		if(ray_cast_2d.is_colliding()):
 			distance = ray_cast_2d.get_collision_point().distance_to(position)
 		lerpedVolume = lerp(max_volume_db,min_volume_db,distance/maxDistance)
-		print(lerpedVolume)
 		audio_stream_access_proximity.volume_db = lerpedVolume
 	pass
 
