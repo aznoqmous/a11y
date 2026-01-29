@@ -3,8 +3,16 @@ extends Node
 var score := 0.0
 var time := 0.0
 
+var access_audio_description : bool = false
+
 func _process(delta: float) -> void:
 	time += delta
+	
+func _input(event: InputEvent) -> void:
+	#DEBUG : add warning description sounds to the game 
+	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F7):
+		access_audio_description = !access_audio_description
+		print("access_audio_description is now : ","enabled" if access_audio_description else "disabled")
 	
 func reset_time():
 	time = 0.0

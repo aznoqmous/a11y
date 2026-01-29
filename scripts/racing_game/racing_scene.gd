@@ -1,5 +1,4 @@
-extends Node2D
-
+class_name RacingScene extends Node2D
 @export var lanes : Array[Node2D]
 @export var alert_spawns : Array[Node2D]
 @export var alert_scene : PackedScene
@@ -14,6 +13,7 @@ var access_direction = 1
 @onready var spawner: Spawner = $Spawner
 @onready var world: Node2D = $World
 @onready var parallax_2d: Parallax2D = $Decor/Parallax2D
+@export var racing_audio_description : RacingAudioDescription 
 
 func _ready():
 	spawner.on_spawn.connect(func(foe, index):
@@ -22,7 +22,7 @@ func _ready():
 		alert.position = Vector2.LEFT.rotated(randf() * TAU) * randf() * 30.0
 	)
 	player.arrow_container.scale.y = -get_access_direction()
-
+	racing_audio_description.init()
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Up"):
 		selected_lane_index = clamp(selected_lane_index - 1, 0, lanes.size() - 1)
