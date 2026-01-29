@@ -11,12 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://hyh3jftlmogi" path="res://sprites/rect.png" id="5_fljem"]
 [ext_resource type="Script" uid="uid://7r8uo8q3g3f" path="res://scripts/win_zone.gd" id="7_mifp7"]
 [ext_resource type="Texture2D" uid="uid://dxnds7gw0ay84" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
+[ext_resource type="Script" uid="uid://dl56e78065o2g" path="res://scripts/platformer_game/coin_magnet.gd" id="8_geqsw"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="10_i6eov"]
 [ext_resource type="PackedScene" uid="uid://dlg0imgecbvrm" path="res://scenes/platformer_game/jump_collision.tscn" id="11_y8trb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mifp7"]
 radius = 21.0
 height = 82.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjot2"]
+radius = 202.71997
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j34ms"]
 resource_local_to_scene = true
@@ -81,6 +85,16 @@ texture = ExtResource("4_j34ms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1682444645]
 shape = SubResource("CapsuleShape2D_mifp7")
+
+[node name="CoinMagnet" type="Node2D" parent="World/Player" unique_id=749821202]
+script = ExtResource("8_geqsw")
+
+[node name="CoinMagnet" type="Area2D" parent="World/Player/CoinMagnet" unique_id=1280139097]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player/CoinMagnet/CoinMagnet" unique_id=1732990635]
+shape = SubResource("CircleShape2D_tjot2")
 
 [node name="Collectibles" type="Node2D" parent="World" unique_id=1466877935]
 
@@ -396,6 +410,8 @@ position = Vector2(1, -21.649994)
 scale = Vector2(0.33203125, 0.30722654)
 texture = ExtResource("7_s7k25")
 
+[connection signal="area_entered" from="World/Player/CoinMagnet/CoinMagnet" to="World/Player/CoinMagnet" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="World/Player/CoinMagnet/CoinMagnet" to="World/Player/CoinMagnet" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="World/JumpZones/JumpCollision" to="World/Player" method="_on_jump_collision_area_entered"]
 [connection signal="area_entered" from="World/JumpZones/JumpCollision2" to="World/Player" method="_on_jump_collision_area_entered"]
 [connection signal="area_entered" from="World/JumpZones/JumpCollision3" to="World/Player" method="_on_jump_collision_area_entered"]
