@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6kdaceinlrf"
-path="res://.godot/imported/racing-road-stripes.PNG-03e7a3c64970acee5d80b7f8ab6b8c3b.ctex"
+uid="uid://cgm5lh5lxx578"
+path="res://.godot/imported/electricball.PNG-ac1cc719a69b03fdceb9a3c7ed039553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/racing_game/racing-road-stripes.PNG"
-dest_files=["res://.godot/imported/racing-road-stripes.PNG-03e7a3c64970acee5d80b7f8ab6b8c3b.ctex"]
+source_file="res://sprites/shmup_game/electricball.PNG"
+dest_files=["res://.godot/imported/electricball.PNG-ac1cc719a69b03fdceb9a3c7ed039553.ctex"]
 
 [params]
 
