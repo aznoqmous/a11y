@@ -2,6 +2,7 @@ class_name PlatformerScene extends Node
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var player: PlatformerPlayer = $World/Player
 @onready var death_zone: Area2D = $DeathZone
+@onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
 
 var camera_target_position
 
@@ -12,6 +13,7 @@ func _ready():
 	)
 	
 func _process(delta: float) -> void:
+	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)
 	if player.global_position.x > camera_target_position.x:
 		camera_target_position.x = player.global_position.x
 	camera_2d.global_position = lerp(camera_2d.global_position, camera_target_position, delta * 5.0)

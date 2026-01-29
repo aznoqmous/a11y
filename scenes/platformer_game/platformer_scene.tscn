@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://e48rdc17n3tq"]
 
 [ext_resource type="Script" uid="uid://d3oractas32rd" path="res://scripts/platformer_game/platformer_scene.gd" id="1_2dopb"]
+[ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="2_erxnb"]
 [ext_resource type="Texture2D" uid="uid://biuxetsnl0dh6" path="res://sprites/shmup_game/shmup-parallax-1.png" id="2_j34ms"]
-[ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_lbo0a"]
+[ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/uis/overlay_control.tscn" id="2_lbo0a"]
 [ext_resource type="Script" uid="uid://dm1r442wt8ydm" path="res://scripts/platformer_game/platformer_player.gd" id="3_j34ms"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="4_dvn4p"]
 [ext_resource type="Texture2D" uid="uid://ca55kp4ucwlo2" path="res://sprites/platformer_game/platformer-player.png" id="4_j34ms"]
@@ -32,6 +33,8 @@ normal = Vector2(-1, 0)
 [node name="PlatformerScene" type="Node2D" unique_id=1701240198]
 script = ExtResource("1_2dopb")
 
+[node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("2_erxnb")]
+
 [node name="OverlayControl" parent="." unique_id=863188350 instance=ExtResource("2_lbo0a")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=78951313]
@@ -44,7 +47,7 @@ position = Vector2(627, 211)
 repeat_size = Vector2(350, 350)
 repeat_times = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
+[node name="ParallaxSprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
 position = Vector2(-163, 109)
 texture = ExtResource("4_dvn4p")
 

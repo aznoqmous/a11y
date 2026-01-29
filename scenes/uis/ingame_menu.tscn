@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b1v6xhh7g1kdu"]
+
+[ext_resource type="Script" uid="uid://dhluybknaxlqe" path="res://scripts/ingame_menu.gd" id="1_uxpsq"]
+[ext_resource type="PackedScene" uid="uid://lxno8luvk20y" path="res://scenes/uis/colors_layer.tscn" id="2_nkaj3"]
+[ext_resource type="PackedScene" uid="uid://dv6mn5fjg5e5w" path="res://scenes/uis/remapping_layer.tscn" id="3_6cw0o"]
+
+[node name="IngameMenu" type="Node" unique_id=1895831733 node_paths=PackedStringArray("inputs_binding_layer", "colors_binding_layer")]
+script = ExtResource("1_uxpsq")
+inputs_binding_layer = NodePath("RemappingLayer")
+colors_binding_layer = NodePath("ColorsLayer")
+
+[node name="IngameMenu" type="CanvasLayer" parent="." unique_id=1642186541]
+
+[node name="Control" type="Control" parent="IngameMenu" unique_id=1293251299]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IngameMenu/Control" unique_id=2078685597]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_top = 16.0
+offset_right = -13.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="InputsButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=1524081382]
+layout_mode = 2
+text = "Inputs"
+
+[node name="ColorsButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=364137585]
+layout_mode = 2
+text = "Colors"
+
+[node name="ColorsButton2" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=223078385]
+layout_mode = 2
+text = "Colors"
+
+[node name="ColorsLayer" parent="." unique_id=32325962 instance=ExtResource("2_nkaj3")]
+visible = false
+
+[node name="RemappingLayer" parent="." unique_id=883977205 instance=ExtResource("3_6cw0o")]
+visible = false

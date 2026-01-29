@@ -1,5 +1,6 @@
 class_name RacingPlayer extends Player
 @onready var arrow_container: Node2D = $ArrowContainer
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var audio_stream_access_proximity: AudioStreamPlayer2D = $AudioAccessProximity
@@ -27,5 +28,6 @@ func raycast_routine() -> void:
 		print(lerpedVolume)
 		audio_stream_access_proximity.volume_db = lerpedVolume
 	pass
-	
-	
+
+func _process(delta: float) -> void:
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)

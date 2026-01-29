@@ -10,6 +10,8 @@ var current_health := 1
 @export var bullet_scene : PackedScene
 @export var bullet_parent : Node2D
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 var fire_time := 0.0
 
 func _ready():
@@ -19,6 +21,8 @@ func _ready():
 	current_health = max_health
 
 func _process(delta) -> void:
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
+
 	if Input.is_action_pressed("Up"):
 		position.y -= delta * move_speed
 	if Input.is_action_pressed("Down"):

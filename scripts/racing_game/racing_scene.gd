@@ -2,6 +2,7 @@ class_name RacingScene extends Node2D
 @export var lanes : Array[Node2D]
 @export var alert_spawns : Array[Node2D]
 @export var alert_scene : PackedScene
+@export var racing_audio_description : RacingAudioDescription 
 
 var selected_lane_index = 1
 var selected_lane : Node2D :
@@ -13,7 +14,7 @@ var access_direction = 1
 @onready var spawner: Spawner = $Spawner
 @onready var world: Node2D = $World
 @onready var parallax_2d: Parallax2D = $Decor/Parallax2D
-@export var racing_audio_description : RacingAudioDescription 
+@onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
 
 func _ready():
 	spawner.on_spawn.connect(func(foe, index):
@@ -23,6 +24,7 @@ func _ready():
 	)
 	player.arrow_container.scale.y = -get_access_direction()
 	racing_audio_description.init()
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Up"):
 		selected_lane_index = clamp(selected_lane_index - 1, 0, lanes.size() - 1)
@@ -39,6 +41,7 @@ func _input(event: InputEvent) -> void:
 		player.arrow_container.scale.y = -get_access_direction()
 
 func _process(delta):
+	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)
 	player.position = player.position.lerp(selected_lane.position, delta * 10.0)
 
 func get_access_direction():

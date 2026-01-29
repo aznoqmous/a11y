@@ -1,7 +1,10 @@
 class_name ShmupScene extends Node
 
 @export var star_score_scene : PackedScene
+
 @onready var spawner: Spawner = $Spawner
+@onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
+
 func _ready():
 	spawner.on_spawn.connect(func(foe: Foe, index):
 		foe.on_death.connect(func():
@@ -11,3 +14,6 @@ func _ready():
 			star.speed = foe.speed
 		)
 	)
+
+func _process(delta: float) -> void:
+	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)

@@ -1,6 +1,8 @@
 class_name FoeBullet extends Area2D
 
 @export var speed : Vector2
+@onready var sprite_2d: Sprite2D = $SpriteContainer/Sprite2D
 
 func _process(delta):
 	position += speed * delta
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.ENEMY)
