@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://djcily835i1nn"]
 
 [ext_resource type="Script" uid="uid://cj8ddmd74xbjq" path="res://scripts/racing_game/racing_scene.gd" id="1_ovyp3"]
-[ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.PNG" id="2_26ryi"]
-[ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/overlay_control.tscn" id="2_cyw1b"]
+[ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
+[ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/uis/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_15qfb"]
