@@ -18,7 +18,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func grab_item(area:Node2D):
 	while(area != null):
-		var magnet_value = lerp(0.01,0.03,GameManager.access_platformer_strength_value)
+		var magnet_value = lerp(0.01,0.07,GameManager.access_platformer_strength_value)
 		area.global_position = lerp(area.global_position,global_position,magnet_value)
 		await get_tree().create_timer(0.01).timeout
 		
