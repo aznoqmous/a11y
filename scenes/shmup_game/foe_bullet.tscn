@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfd7crw1aflmp"]
 
 [ext_resource type="Script" uid="uid://cwnyqb8fxc4e6" path="res://scripts/shmup_game/foe_bullet.gd" id="1_5v6uw"]
-[ext_resource type="Texture2D" uid="uid://ivix065hrrso" path="res://sprites/shmup_game/foe-bullet.png" id="2_vlt0r"]
+[ext_resource type="Texture2D" uid="uid://cgm5lh5lxx578" path="res://sprites/shmup_game/electricball.PNG" id="2_5v6uw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcbj8"]
 radius = 34.0147
@@ -16,4 +16,6 @@ shape = SubResource("CircleShape2D_gcbj8")
 [node name="SpriteContainer" type="Node2D" parent="." unique_id=1738726555]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=1393532717]
-texture = ExtResource("2_vlt0r")
+modulate = Color(0.43725997, 0.92925256, 0, 1)
+scale = Vector2(0.2734375, 0.2734375)
+texture = ExtResource("2_5v6uw")
