@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b32rosfst7li5"
-path="res://.godot/imported/Background.png-61187817ed14dfde088e871dfa073b5f.ctex"
+path="res://.godot/imported/Background.png-2a345e972bbd801a2b9c1fc260ec020b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/platformer_game/Background.png"
-dest_files=["res://.godot/imported/Background.png-61187817ed14dfde088e871dfa073b5f.ctex"]
+source_file="res://sprites/Background.png"
+dest_files=["res://.godot/imported/Background.png-2a345e972bbd801a2b9c1fc260ec020b.ctex"]
 
 [params]
 

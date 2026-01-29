@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dpu8pgv5ql4f8"]
+
+[ext_resource type="Script" uid="uid://b5eqobmcn66sh" path="res://scripts/input_remap_button.gd" id="1_ekvnv"]
+
+[node name="InputRemapButton" type="Button" unique_id=2031073485]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ASSIGN"
+script = ExtResource("1_ekvnv")

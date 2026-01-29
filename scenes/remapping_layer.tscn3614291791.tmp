@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dv6mn5fjg5e5w"]
+
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="1_rxdjm"]
+[ext_resource type="Script" uid="uid://b5eqobmcn66sh" path="res://scripts/input_remap_button.gd" id="2_xcj6y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpjj3"]
+font = ExtResource("1_rxdjm")
+font_size = 32
+
+[node name="RemappingLayer" type="CanvasLayer" unique_id=32325962]
+
+[node name="Control" type="Control" parent="." unique_id=319613499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1069570831]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1580124764]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=1359673561]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Action button"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/VBoxContainer/HBoxContainer" unique_id=2024918913]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("2_xcj6y")
+action = "Space"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1406653961]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer2" unique_id=2140119403]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Up"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/VBoxContainer/HBoxContainer2" unique_id=214262284]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("2_xcj6y")
+action = "Up"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1100750071]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer3" unique_id=2021269957]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Down"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/VBoxContainer/HBoxContainer3" unique_id=1104856300]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("2_xcj6y")
+action = "Down"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=714556743]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer4" unique_id=409885790]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Left"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/VBoxContainer/HBoxContainer4" unique_id=2092738582]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("2_xcj6y")
+action = "Left"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1059497444]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer5" unique_id=280831937]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Right"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/VBoxContainer/HBoxContainer5" unique_id=309092775]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("2_xcj6y")
+action = "Right"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
