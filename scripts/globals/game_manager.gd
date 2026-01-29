@@ -6,6 +6,7 @@ var time := 0.0
 var access_audio_description : bool = false
 #When set to true, the green zones in the LD will auto jump
 var access_platformer_auto_jump = false
+var access_animated_background = false
 
 #When set to true, the green zones in the LD will auto jump
 var access_platformer_magnet = false
@@ -25,7 +26,6 @@ enum Colors {
 	COLLECTABLE,
 	BACKGROUND
 }
-
 var colors = {
 	Colors.PLAYER: Color("#0082ff"),
 	Colors.ENEMY: Color.RED,

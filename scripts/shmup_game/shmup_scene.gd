@@ -4,6 +4,7 @@ class_name ShmupScene extends Node
 
 @onready var spawner: Spawner = $Spawner
 @onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
+@onready var background_parallax_2: Parallax2D = $Decor/BackgroundParallax2
 
 func _ready():
 	spawner.on_spawn.connect(func(foe: Foe, index):
@@ -17,3 +18,4 @@ func _ready():
 
 func _process(delta: float) -> void:
 	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)
+	background_parallax_2.autoscroll.x = -20 if GameManager.access_animated_background else 0

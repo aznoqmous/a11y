@@ -166,7 +166,7 @@ offset_top = 19.0
 offset_right = 159.5
 offset_bottom = 62.0
 grow_horizontal = 2
-text = "Map your inputs !"
+text = "Map your volumes !"
 label_settings = SubResource("LabelSettings_mtr1t")
 
 [node name="QuitButton" type="TextureButton" parent="Control" unique_id=1066013166]

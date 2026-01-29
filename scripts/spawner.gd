@@ -33,7 +33,6 @@ func _process(delta):
 		
 func spawn():
 	var available_resources = spawned_resources.filter(func(a: SpawnedResource): return a.cost < coins)
-	print("SPAWN ", available_resources.size(), " ", coins)
 	if available_resources.size() <= 0:
 		spawn_time = spawn_cooldown
 		return;
