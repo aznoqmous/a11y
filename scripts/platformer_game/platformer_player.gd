@@ -13,6 +13,7 @@ func _input(event: InputEvent) -> void:
 func jump(strength:float = 1):
 	velocity.y -= jump_power * strength
 	coyote_time = 0.0
+	
 func _process(delta: float) -> void:
 	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
 	if Input.is_action_pressed("Left"):

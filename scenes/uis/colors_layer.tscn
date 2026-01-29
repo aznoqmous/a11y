@@ -138,6 +138,7 @@ label_settings = SubResource("LabelSettings_fpjj3")
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 color = Color(0.7890625, 0.14178467, 0.14178467, 1)
+edit_alpha = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer" unique_id=1703901690]
 custom_minimum_size = Vector2(0, 60)
@@ -153,6 +154,7 @@ label_settings = SubResource("LabelSettings_fpjj3")
 [node name="EnemyColor" type="ColorPickerButton" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer2" unique_id=59183126]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+edit_alpha = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer" unique_id=448326928]
 custom_minimum_size = Vector2(0, 60)
@@ -168,6 +170,7 @@ label_settings = SubResource("LabelSettings_fpjj3")
 [node name="CollectableColor" type="ColorPickerButton" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer3" unique_id=918331534]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+edit_alpha = false
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer" unique_id=1321839271]
 custom_minimum_size = Vector2(0, 60)
@@ -183,6 +186,7 @@ label_settings = SubResource("LabelSettings_fpjj3")
 [node name="BackgroundColor" type="ColorPickerButton" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer4" unique_id=433331873]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+edit_alpha = false
 
 [node name="Label" type="Label" parent="Control/Panel" unique_id=82163116]
 layout_mode = 1
