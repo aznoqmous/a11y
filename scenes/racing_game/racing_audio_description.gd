@@ -11,20 +11,22 @@ var current_lane = -1
 
 func init() -> void:
 	racing_scene.spawner.on_spawn.connect(func(foe:Foe, index):
-		var foe_scene:AudioDescriptionFoe = audio_description_foe_scene.instantiate()
-		foe_position.add_child(foe_scene)
-		foe_scene.play_sound(lane_sound_array[index],foe.audio_description_stream)
+		if(GameManager.access_audio_description):
+			var foe_scene:AudioDescriptionFoe = audio_description_foe_scene.instantiate()
+			foe_position.add_child(foe_scene)
+			foe_scene.play_sound(lane_sound_array[index],foe.audio_description_stream)
 	)
 	pass
 
 func _process(delta: float) -> void:
-	if(current_lane == -1):
-		pass
-	elif(current_lane != racing_scene.selected_lane_index):
-		#PLAY THE SOUND
-		print("{Debug} We just Swapped lanes to lane ", racing_scene.selected_lane_index)
-		play_sound(racing_scene.selected_lane_index)
-	current_lane = racing_scene.selected_lane_index
+	if(GameManager.access_audio_description):
+		if(current_lane == -1):
+			pass
+		elif(current_lane != racing_scene.selected_lane_index):
+			#PLAY THE SOUND
+			print("{Debug} We just Swapped lanes to lane ", racing_scene.selected_lane_index)
+			play_sound(racing_scene.selected_lane_index)
+		current_lane = racing_scene.selected_lane_index
 
 	
 func play_sound(laneIndex : int) -> void:
