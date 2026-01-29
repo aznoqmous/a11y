@@ -15,6 +15,7 @@ var fire_time = 0.0
 var current_speed := Vector2.ZERO
 
 @onready var sprite_container: Node2D = $SpriteContainer
+@onready var sprite_2d: Node2D = $SpriteContainer/Sprite2D
 
 var is_alive : bool : 
 	get: return current_health > 0
@@ -22,6 +23,7 @@ var is_alive : bool :
 var current_health := 0.0
 
 func _ready():
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.ENEMY)
 	current_speed = speed
 	current_health = max_health
 	rotation_speed = lerp(rotation_speed, rotation_speed * randf(), rotation_speed_random)

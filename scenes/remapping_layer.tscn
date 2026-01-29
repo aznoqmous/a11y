@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://dv6mn5fjg5e5w"]
+
+[ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="1_fpjj3"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="1_rxdjm"]
+[ext_resource type="Texture2D" uid="uid://c8q44nhppqi4" path="res://sprites/Background-npr.png" id="2_fpjj3"]
+[ext_resource type="Script" uid="uid://b5eqobmcn66sh" path="res://scripts/input_remap_button.gd" id="2_xcj6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umkka"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpjj3"]
+font = ExtResource("1_rxdjm")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvq2b"]
+font = ExtResource("1_rxdjm")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[node name="RemappingLayer" type="CanvasLayer" unique_id=32325962]
+visible = false
+
+[node name="Control" type="Control" parent="." unique_id=319613499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="Control" unique_id=71279293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=557485806]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -248.0
+offset_right = 370.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_umkka")
+
+[node name="TileScaleContainer" type="Container" parent="Control/Panel" unique_id=521044501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fpjj3")
+tile_scale = 0.785
+metadata/_custom_type_script = "uid://iru4e87kcgfl"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel/TileScaleContainer" unique_id=694661654]
+layout_mode = 2
+texture = ExtResource("2_fpjj3")
+patch_margin_left = 81
+patch_margin_top = 55
+patch_margin_right = 70
+patch_margin_bottom = 39
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=371322108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 71.0
+offset_right = -21.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer" unique_id=1069570831]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1580124764]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1359673561]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Action button"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2024918913]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rxdjm")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("2_xcj6y")
+action = "Space"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1406653961]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2140119403]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Up"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=214262284]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rxdjm")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("2_xcj6y")
+action = "Up"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1100750071]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2021269957]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Down"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1104856300]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rxdjm")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("2_xcj6y")
+action = "Down"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=714556743]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=409885790]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Left"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2092738582]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rxdjm")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("2_xcj6y")
+action = "Left"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1059497444]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=280831937]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Move Right"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="InputRemapButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=309092775]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rxdjm")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("2_xcj6y")
+action = "Right"
+metadata/_custom_type_script = "uid://b5eqobmcn66sh"
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=82163116]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.5
+offset_top = 19.0
+offset_right = 159.5
+offset_bottom = 62.0
+grow_horizontal = 2
+text = "Map your inputs !"
+label_settings = SubResource("LabelSettings_nvq2b")

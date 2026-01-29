@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bu574b8suxowr" path="res://scripts/spawner.gd" id="4_hd3y3"]
 [ext_resource type="Script" uid="uid://bjubkomc0m1mv" path="res://scripts/spawned_resource.gd" id="5_f4yiw"]
 [ext_resource type="PackedScene" uid="uid://4hgdrya6rqd5" path="res://scenes/shmup_game/player_bullet.tscn" id="5_sxcim"]
-[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/platformer_game/Background.png" id="5_xh4ap"]
+[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_xh4ap"]
 [ext_resource type="Texture2D" uid="uid://ck1qmejj1130l" path="res://sprites/shmup_game/Background-Parallax.PNG" id="6_g8h8x"]
 [ext_resource type="Texture2D" uid="uid://cv3t8mjnk823p" path="res://sprites/shmup_game/shmup-player.png" id="7_fm4q6"]
 [ext_resource type="Resource" uid="uid://du6yoohm1j47w" path="res://resources/shmup_game/vessel.tres" id="7_gcbj8"]
