@@ -1,6 +1,7 @@
 class_name PlayerBullet extends Area2D
 
 @export var speed : Vector2
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	area_entered.connect(func(foe: Foe):
@@ -9,4 +10,5 @@ func _ready() -> void:
 	)
 
 func _process(delta):
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
 	position += speed * delta

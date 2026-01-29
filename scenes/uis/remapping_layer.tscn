@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dv6mn5fjg5e5w"]
 
+[ext_resource type="Script" uid="uid://coqsa1l0a2wr2" path="res://scripts/remapping_layer.gd" id="1_bxxj4"]
 [ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="1_fpjj3"]
 [ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="1_rxdjm"]
 [ext_resource type="Texture2D" uid="uid://c8q44nhppqi4" path="res://sprites/Background-npr.png" id="2_fpjj3"]
 [ext_resource type="Script" uid="uid://b5eqobmcn66sh" path="res://scripts/input_remap_button.gd" id="2_xcj6y"]
+[ext_resource type="Texture2D" uid="uid://os5hxlton3ao" path="res://sprites/uis/x.PNG" id="6_bxxj4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umkka"]
 
@@ -18,6 +20,7 @@ font_size = 42
 font_color = Color(0, 0, 0, 1)
 
 [node name="RemappingLayer" type="CanvasLayer" unique_id=32325962]
+script = ExtResource("1_bxxj4")
 
 [node name="Control" type="Control" parent="." unique_id=319613499]
 layout_mode = 3
@@ -208,3 +211,14 @@ offset_bottom = 62.0
 grow_horizontal = 2
 text = "Map your inputs !"
 label_settings = SubResource("LabelSettings_nvq2b")
+
+[node name="QuitButton" type="TextureButton" parent="Control" unique_id=939337690]
+modulate = Color(0.87109375, 0.25520325, 0.25520325, 1)
+layout_mode = 0
+offset_left = 854.0
+offset_top = 89.0
+offset_right = 917.0
+offset_bottom = 152.0
+texture_normal = ExtResource("6_bxxj4")
+ignore_texture_size = true
+stretch_mode = 5

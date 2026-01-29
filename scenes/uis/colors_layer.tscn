@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bosh6hnrjct5k" path="res://scripts/colors_layer.gd" id="1_danll"]
 [ext_resource type="Texture2D" uid="uid://c8q44nhppqi4" path="res://sprites/Background-npr.png" id="2_danll"]
 [ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="3_cq3gs"]
+[ext_resource type="Texture2D" uid="uid://os5hxlton3ao" path="res://sprites/uis/x.PNG" id="5_4fso5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umkka"]
 
@@ -18,7 +19,6 @@ font_size = 42
 font_color = Color(0, 0, 0, 1)
 
 [node name="ColorsLayer" type="CanvasLayer" unique_id=32325962]
-visible = false
 script = ExtResource("1_danll")
 
 [node name="Control" type="Control" parent="." unique_id=319613499]
@@ -47,7 +47,7 @@ anchor_bottom = 0.5
 offset_left = -370.0
 offset_top = -248.0
 offset_right = 370.0
-offset_bottom = 207.0
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_umkka")
@@ -153,6 +153,21 @@ label_settings = SubResource("LabelSettings_fpjj3")
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer" unique_id=1321839271]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer4" unique_id=1551607249]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Background color"
+label_settings = SubResource("LabelSettings_fpjj3")
+
+[node name="BackgroundColor" type="ColorPickerButton" parent="Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer4" unique_id=433331873]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
 [node name="Label" type="Label" parent="Control/Panel" unique_id=82163116]
 layout_mode = 1
 anchors_preset = 5
@@ -165,3 +180,14 @@ offset_bottom = 62.0
 grow_horizontal = 2
 text = "Map your colors !"
 label_settings = SubResource("LabelSettings_nvq2b")
+
+[node name="QuitButton" type="TextureButton" parent="Control" unique_id=2065130177]
+modulate = Color(0.87109375, 0.25520325, 0.25520325, 1)
+layout_mode = 0
+offset_left = 854.0
+offset_top = 89.0
+offset_right = 917.0
+offset_bottom = 152.0
+texture_normal = ExtResource("5_4fso5")
+ignore_texture_size = true
+stretch_mode = 5

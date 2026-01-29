@@ -53,8 +53,7 @@ func _toggled(toggled_on: bool):
 		else:
 			text = OS.get_keycode_string(input.keycode)
 	
-func _unhandled_input(event: InputEvent) -> void:
-	print(event)
+func _unhandled_input(event: InputEvent) -> void:	
 	if !InputMap.has_action(action) or !is_pressed():
 		return;
 	if event.is_pressed() and (event is InputEventKey or event is InputEventJoypadButton):

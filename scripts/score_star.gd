@@ -15,7 +15,9 @@ func _ready() -> void:
 	sprite_2d.rotate(randf() * PI)
 
 func _process(delta: float) -> void:
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.COLLECTABLE)
 	sprite_2d.rotate(delta * PI)
 	sprite_2d.position.y = sin(Time.get_ticks_msec() / 1000.0 * PI)
 	position += speed * delta
+
 	

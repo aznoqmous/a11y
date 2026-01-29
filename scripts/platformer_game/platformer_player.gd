@@ -5,19 +5,20 @@ class_name PlatformerPlayer extends CharacterBody2D
 @export var coyote_jump_time := 0.3
 var coyote_time := 0.0
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Space") and is_coyote_floored():
 		velocity.y -= jump_power
 		coyote_time = 0.0
 		
-	
 func _process(delta: float) -> void:
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
 	if Input.is_action_pressed("Left"):
 		position.x -= delta * move_speed
 	if Input.is_action_pressed("Right"):
 		position.x += delta * move_speed
 		
-
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	move_and_slide()

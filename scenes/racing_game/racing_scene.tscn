@@ -79,7 +79,7 @@ repeat_size = Vector2(350, 350)
 autoscroll = Vector2(-600, 0)
 repeat_times = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
+[node name="ParallaxSprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=480648000]
 position = Vector2(-163, 109)
 texture = ExtResource("5_15qfb")
 

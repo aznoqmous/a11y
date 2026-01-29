@@ -47,7 +47,7 @@ position = Vector2(627, 211)
 repeat_size = Vector2(350, 350)
 repeat_times = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
+[node name="ParallaxSprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=6299384]
 position = Vector2(-163, 109)
 texture = ExtResource("4_dvn4p")
 

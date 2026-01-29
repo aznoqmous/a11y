@@ -44,7 +44,7 @@ position = Vector2(627, 211)
 repeat_size = Vector2(350, 350)
 repeat_times = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
+[node name="ParallaxSprite2D" type="Sprite2D" parent="Decor/BackgroundParallax" unique_id=502700936]
 position = Vector2(-163, 109)
 texture = ExtResource("5_xh4ap")
 
@@ -54,6 +54,7 @@ autoscroll = Vector2(-20, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Decor/BackgroundParallax2" unique_id=1477136716]
+modulate = Color(1, 1, 1, 0.4)
 position = Vector2(-163, 109)
 scale = Vector2(0.295, 0.295)
 texture = ExtResource("6_g8h8x")

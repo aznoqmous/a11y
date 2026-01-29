@@ -44,6 +44,7 @@ layout_mode = 2
 text = "Colors"
 
 [node name="ColorsLayer" parent="." unique_id=32325962 instance=ExtResource("2_nkaj3")]
+visible = false
 
 [node name="RemappingLayer" parent="." unique_id=883977205 instance=ExtResource("3_6cw0o")]
 visible = false

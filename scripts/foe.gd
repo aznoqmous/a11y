@@ -35,6 +35,7 @@ func _ready():
 	if rotation_speed > 0: rotate(randf() * TAU);
 
 func _process(delta: float) -> void:
+	GameManager.set_access_color(sprite_2d, GameManager.Colors.ENEMY)
 	current_speed = speed * (1.0 + speed_scaling * GameManager.time)
 	position += delta * current_speed
 	sprite_container.scale = lerp(sprite_container.scale, Vector2.ONE, delta * 5.0)
