@@ -1,9 +1,8 @@
 class_name RacingAudioDescription extends Node2D
 
 @export var racing_scene:RacingScene 
-@export var audio_description_source : AudioStreamPlayer2D
 
-@export var lane_sound_array : Array[AudioStream]
+@export var lane_sound_array : Array[AudioStreamPlayer2D]
 @export var audio_description_foe_scene : PackedScene
 
 @export var foe_position:Node2D
@@ -29,5 +28,4 @@ func _process(delta: float) -> void:
 
 	
 func play_sound(laneIndex : int) -> void:
-	audio_description_source.stream = lane_sound_array[laneIndex]
-	audio_description_source.play()
+	lane_sound_array[laneIndex].play()

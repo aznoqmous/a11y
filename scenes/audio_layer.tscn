@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://cbsqynwpkdi2y"]
+
+[ext_resource type="Script" uid="uid://l2eyhhxmd0xn" path="res://scripts/audio_layer.gd" id="1_51npx"]
+[ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="1_ud6c4"]
+[ext_resource type="Texture2D" uid="uid://c8q44nhppqi4" path="res://sprites/Background-npr.png" id="2_51npx"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="3_5c1bg"]
+[ext_resource type="Texture2D" uid="uid://os5hxlton3ao" path="res://sprites/uis/x.PNG" id="5_5sv21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj678"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_285xh"]
+font = ExtResource("3_5c1bg")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtr1t"]
+font = ExtResource("3_5c1bg")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[node name="AudioLayer" type="CanvasLayer" unique_id=491621607]
+script = ExtResource("1_51npx")
+
+[node name="Control" type="Control" parent="." unique_id=1400302759]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="Control" unique_id=615749455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=220672977]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -248.0
+offset_right = 370.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sj678")
+
+[node name="TileScaleContainer" type="Container" parent="Control/Panel" unique_id=488537299]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ud6c4")
+tile_scale = 0.785
+metadata/_custom_type_script = "uid://iru4e87kcgfl"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel/TileScaleContainer" unique_id=1273378431]
+layout_mode = 2
+texture = ExtResource("2_51npx")
+patch_margin_left = 81
+patch_margin_top = 55
+patch_margin_right = 70
+patch_margin_bottom = 39
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=710745263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 71.0
+offset_right = -21.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer" unique_id=1801677038]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=620885943]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1693835109]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Master"
+label_settings = SubResource("LabelSettings_285xh")
+
+[node name="MasterSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1737604563]
+custom_minimum_size = Vector2(300, 61.625)
+layout_mode = 2
+max_value = 2.0
+step = 0.1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1555356677]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1430975181]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_285xh")
+
+[node name="MusicSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=980860649]
+custom_minimum_size = Vector2(300, 61.625)
+layout_mode = 2
+max_value = 2.0
+step = 0.1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=438504234]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=361551909]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_285xh")
+
+[node name="SFXSlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1496298610]
+custom_minimum_size = Vector2(300, 61.625)
+layout_mode = 2
+max_value = 2.0
+step = 0.1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=970077346]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=607508593]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Accessibility"
+label_settings = SubResource("LabelSettings_285xh")
+
+[node name="AccessibilitySlider" type="HSlider" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=792549825]
+custom_minimum_size = Vector2(300, 61.625)
+layout_mode = 2
+max_value = 2.0
+step = 0.1
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=1352847776]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.5
+offset_top = 19.0
+offset_right = 159.5
+offset_bottom = 62.0
+grow_horizontal = 2
+text = "Map your inputs !"
+label_settings = SubResource("LabelSettings_mtr1t")
+
+[node name="QuitButton" type="TextureButton" parent="Control" unique_id=1066013166]
+modulate = Color(0.87109375, 0.25520325, 0.25520325, 1)
+layout_mode = 0
+offset_left = 854.0
+offset_top = 89.0
+offset_right = 917.0
+offset_bottom = 152.0
+texture_normal = ExtResource("5_5sv21")
+ignore_texture_size = true
+stretch_mode = 5

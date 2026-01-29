@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://dhluybknaxlqe" path="res://scripts/ingame_menu.gd" id="1_uxpsq"]
 [ext_resource type="PackedScene" uid="uid://lxno8luvk20y" path="res://scenes/uis/colors_layer.tscn" id="2_nkaj3"]
 [ext_resource type="PackedScene" uid="uid://dv6mn5fjg5e5w" path="res://scenes/uis/remapping_layer.tscn" id="3_6cw0o"]
+[ext_resource type="PackedScene" uid="uid://cbsqynwpkdi2y" path="res://scenes/audio_layer.tscn" id="4_nkaj3"]
 
-[node name="IngameMenu" type="Node" unique_id=1895831733 node_paths=PackedStringArray("inputs_binding_layer", "colors_binding_layer")]
+[node name="IngameMenu" type="Node" unique_id=1895831733 node_paths=PackedStringArray("inputs_binding_layer", "colors_binding_layer", "audio_binding_layer")]
 script = ExtResource("1_uxpsq")
 inputs_binding_layer = NodePath("RemappingLayer")
 colors_binding_layer = NodePath("ColorsLayer")
+audio_binding_layer = NodePath("AudioLayer")
 
 [node name="IngameMenu" type="CanvasLayer" parent="." unique_id=1642186541]
 
@@ -39,12 +41,15 @@ text = "Inputs"
 layout_mode = 2
 text = "Colors"
 
-[node name="ColorsButton2" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=223078385]
+[node name="AudioButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=223078385]
 layout_mode = 2
-text = "Colors"
+text = "Sound"
 
 [node name="ColorsLayer" parent="." unique_id=32325962 instance=ExtResource("2_nkaj3")]
 visible = false
 
 [node name="RemappingLayer" parent="." unique_id=883977205 instance=ExtResource("3_6cw0o")]
+visible = false
+
+[node name="AudioLayer" parent="." unique_id=491621607 instance=ExtResource("4_nkaj3")]
 visible = false
