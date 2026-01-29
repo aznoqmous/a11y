@@ -6,6 +6,7 @@ class_name ColorsLayer extends CanvasLayer
 @onready var enemy_color: ColorPickerButton = $Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer2/EnemyColor
 @onready var collectable_color: ColorPickerButton = $Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer3/CollectableColor
 @onready var background_color: ColorPickerButton = $Control/Panel/MarginContainer/VBoxContainer/ColorsContainer/HBoxContainer4/BackgroundColor
+@onready var animated_toggle: CheckButton = $Control/Panel/MarginContainer/VBoxContainer/HBoxContainer5/AnimatedToggle
 
 @onready var quit_button: TextureButton = $Control/QuitButton
 
@@ -36,3 +37,8 @@ func _ready():
 		GameManager.colors[GameManager.Colors.BACKGROUND] = color
 	)
 	quit_button.pressed.connect(func(): set_visible(false))
+	
+	GameManager.access_animated_background = animated_toggle.is_pressed()
+	animated_toggle.toggled.connect(func(toggled):
+		GameManager.access_animated_background = toggled
+	)

@@ -14,6 +14,7 @@ var access_direction = 1
 @onready var spawner: Spawner = $Spawner
 @onready var world: Node2D = $World
 @onready var parallax_2d: Parallax2D = $Decor/Parallax2D
+@onready var background_parallax: Parallax2D = $Decor/BackgroundParallax
 @onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
 
 func _ready():
@@ -43,7 +44,9 @@ func _input(event: InputEvent) -> void:
 func _process(delta):
 	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)
 	player.position = player.position.lerp(selected_lane.position, delta * 10.0)
-
+	parallax_2d.autoscroll.x = -600 if GameManager.access_animated_background else 0
+	background_parallax.autoscroll.x = -600 if GameManager.access_animated_background else 0
+	
 func get_access_direction():
 	var access_dir = access_direction
 	if selected_lane_index + access_direction < 0 or selected_lane_index + access_direction >= lanes.size():

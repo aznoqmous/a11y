@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://b1v6xhh7g1kdu"]
 
 [ext_resource type="Script" uid="uid://dhluybknaxlqe" path="res://scripts/ingame_menu.gd" id="1_uxpsq"]
+[ext_resource type="Texture2D" uid="uid://b1wsyfiyxfjxf" path="res://sprites/uis/controller.PNG" id="2_ljfvm"]
 [ext_resource type="PackedScene" uid="uid://lxno8luvk20y" path="res://scenes/uis/colors_layer.tscn" id="2_nkaj3"]
 [ext_resource type="PackedScene" uid="uid://dv6mn5fjg5e5w" path="res://scenes/uis/remapping_layer.tscn" id="3_6cw0o"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="3_n4kq7"]
+[ext_resource type="Texture2D" uid="uid://uvawxtaynxgy" path="res://sprites/uis/paintbrush.PNG" id="4_47k63"]
 [ext_resource type="PackedScene" uid="uid://cbsqynwpkdi2y" path="res://scenes/audio_layer.tscn" id="4_nkaj3"]
+[ext_resource type="Texture2D" uid="uid://fmsck7hfwuoo" path="res://sprites/uis/music-note.PNG" id="5_3u37u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_njmwl"]
+font = ExtResource("3_n4kq7")
+font_size = 20
 
 [node name="IngameMenu" type="Node" unique_id=1895831733 node_paths=PackedStringArray("inputs_binding_layer", "colors_binding_layer", "audio_binding_layer")]
 script = ExtResource("1_uxpsq")
@@ -21,29 +29,117 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="IngameMenu/Control" unique_id=2078685597]
+[node name="HBoxContainer" type="Control" parent="IngameMenu/Control" unique_id=55779733]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -217.0
+offset_left = -234.0
 offset_top = 16.0
-offset_right = -13.0
-offset_bottom = 56.0
+offset_right = -10.0
+offset_bottom = 80.0
 grow_horizontal = 0
-theme_override_constants/separation = 16
 
-[node name="InputsButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=1524081382]
-layout_mode = 2
-text = "Inputs"
+[node name="InputsButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1924375671]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_ljfvm")
+texture_pressed = ExtResource("2_ljfvm")
+texture_hover = ExtResource("2_ljfvm")
+texture_disabled = ExtResource("2_ljfvm")
+texture_focused = ExtResource("2_ljfvm")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="ColorsButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=364137585]
-layout_mode = 2
-text = "Colors"
+[node name="Label" type="Label" parent="IngameMenu/Control/HBoxContainer/InputsButton" unique_id=484176503]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -2.0
+offset_right = 26.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Controls"
+label_settings = SubResource("LabelSettings_njmwl")
+horizontal_alignment = 1
 
-[node name="AudioButton" type="Button" parent="IngameMenu/Control/HBoxContainer" unique_id=223078385]
-layout_mode = 2
-text = "Sound"
+[node name="ColorsButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1625945815]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 80.0
+offset_right = 144.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_47k63")
+texture_pressed = ExtResource("4_47k63")
+texture_hover = ExtResource("4_47k63")
+texture_disabled = ExtResource("4_47k63")
+texture_focused = ExtResource("4_47k63")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="IngameMenu/Control/HBoxContainer/ColorsButton" unique_id=720695309]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -2.0
+offset_right = 26.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Display"
+label_settings = SubResource("LabelSettings_njmwl")
+horizontal_alignment = 1
+
+[node name="AudioButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1090349324]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 160.0
+offset_right = 224.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_3u37u")
+texture_pressed = ExtResource("5_3u37u")
+texture_hover = ExtResource("5_3u37u")
+texture_disabled = ExtResource("5_3u37u")
+texture_focused = ExtResource("5_3u37u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="IngameMenu/Control/HBoxContainer/AudioButton" unique_id=2109298366]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -2.0
+offset_right = 26.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Audio"
+label_settings = SubResource("LabelSettings_njmwl")
+horizontal_alignment = 1
 
 [node name="ColorsLayer" parent="." unique_id=32325962 instance=ExtResource("2_nkaj3")]
 visible = false
