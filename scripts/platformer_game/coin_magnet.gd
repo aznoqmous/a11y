@@ -5,13 +5,12 @@ extends Node2D
 func _process(delta: float) -> void:
 	if(GameManager.access_platformer_magnet):
 		var shape:CircleShape2D = collision_shape_2d.shape
-		shape.radius = GameManager.access_platformer_radius + 100 
+		shape.radius =lerp(50,250,GameManager.access_platformer_radius) 
 	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(!GameManager.access_platformer_magnet):
 		return
-		pass
 	if(area is ScoreStar):
 		grab_item(area)
 		
@@ -19,7 +18,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func grab_item(area:Node2D):
 	while(area != null):
-		area.global_position = lerp(area.global_position,global_position,GameManager.access_platformer_strength_value)
+		var magnet_value = lerp(0.01,0.07,GameManager.access_platformer_strength_value)
+		area.global_position = lerp(area.global_position,global_position,magnet_value)
 		await get_tree().create_timer(0.01).timeout
 		
 	pass

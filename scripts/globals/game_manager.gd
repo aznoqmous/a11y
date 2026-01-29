@@ -11,13 +11,9 @@ var access_animated_background = false
 #When set to true, the green zones in the LD will auto jump
 var access_platformer_magnet = false
 
-var access_platformer_radius_min = 0
-var access_platformer_radius_max = 300
-var access_platformer_radius = 150
-
-var access_platformer_strength_min = 0.01
-var access_platformer_strength_max = 0.075
-var access_platformer_strength_value = 0.03
+var access_platformer_radius = 1
+var access_platformer_strength_value = 1
+var access_platformer_invincibility = false
 
 var custom_colors: bool
 enum Colors {
@@ -43,8 +39,8 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	#DEBUG : add warning description sounds to the game 
 	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F7):
-		access_audio_description = !access_audio_description
-		print("access_audio_description is now : ","enabled" if access_audio_description else "disabled")
+		access_platformer_invincibility = !access_platformer_invincibility
+		print("invincibility is now : ","enabled" if access_platformer_invincibility else "disabled")
 	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F6):
 		access_platformer_auto_jump = !access_platformer_auto_jump
 		print("auto jump is now : ","enabled" if access_platformer_auto_jump else "disabled")

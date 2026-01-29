@@ -10,9 +10,8 @@ var is_jumping = true
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Space") and is_coyote_floored():
 		jump()
-		
-func jump():
-	velocity.y -= jump_power
+func jump(strength:float = 1):
+	velocity.y -= jump_power * strength
 	coyote_time = 0.0
 	
 func _process(delta: float) -> void:
