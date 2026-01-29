@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="a11y"
-run/main_scene="res://scenes/title.tscn"
+run/main_scene="uid://bh0mhc8ldeofg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

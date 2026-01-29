@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="1_y7k74"]
 [ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="2_kpexm"]
 [ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="4_3xoar"]
+[ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="6_0824t"]
+[ext_resource type="Script" uid="uid://4fn850eudqkr" path="res://scripts/title_sprites.gd" id="7_nuqgq"]
+[ext_resource type="Texture2D" uid="uid://f6007ccj3ahm" path="res://sprites/shmup_game/shmup-obstacle.PNG" id="8_lx2ly"]
+[ext_resource type="Texture2D" uid="uid://ca55kp4ucwlo2" path="res://sprites/platformer_game/platformer-player.png" id="9_jil77"]
 
 [sub_resource type="Animation" id="Animation_7lgly"]
 length = 0.001
@@ -185,3 +189,28 @@ label_settings = SubResource("LabelSettings_mom7w")
 horizontal_alignment = 1
 
 [node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("4_3xoar")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919368846]
+position = Vector2(141.99998, 471.99997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_0824t")
+script = ExtResource("7_nuqgq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=268286529]
+position = Vector2(976.99994, 423.99997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_lx2ly")
+script = ExtResource("7_nuqgq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=124637014]
+position = Vector2(219, 140.00006)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_lx2ly")
+script = ExtResource("7_nuqgq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=2058307925]
+position = Vector2(913, 201)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_jil77")
+offset = Vector2(0, -58.525)
+script = ExtResource("7_nuqgq")
