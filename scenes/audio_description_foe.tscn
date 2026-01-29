@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drolnyywjirmm"]
 
-[ext_resource type="Script" uid="uid://b4gqbq5amfgfo" path="res://scenes/audio_description_foe.gd" id="1_2a1da"]
+[ext_resource type="Script" uid="uid://b4gqbq5amfgfo" path="res://scripts/audio_description_foe.gd" id="1_2a1da"]
 
 [node name="AudioFoe" type="Node2D" unique_id=1424858145 node_paths=PackedStringArray("audio_stream_foe", "audio_stream_direction")]
 script = ExtResource("1_2a1da")
@@ -9,6 +9,8 @@ audio_stream_direction = NodePath("FoeDirection")
 
 [node name="FoeName" type="AudioStreamPlayer2D" parent="." unique_id=1421281933]
 panning_strength = 30.0
+bus = &"SFX"
 
 [node name="FoeDirection" type="AudioStreamPlayer2D" parent="." unique_id=37730283]
 panning_strength = 30.0
+bus = &"AudioDescription"
