@@ -80,6 +80,7 @@ texture = ExtResource("7_15qfb")
 script = ExtResource("6_pbor5")
 spawn_parent = NodePath("../World")
 spawn_starting_coins = 2.0
+spawn_cooldown = 4.0
 spawn_base_gain = 0.6
 spawn_gain_increment = 0.5
 on_spawn_cooldown_scaling = 0.5
