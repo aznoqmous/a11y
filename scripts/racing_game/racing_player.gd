@@ -8,13 +8,26 @@ class_name RacingPlayer extends Player
 @export var min_volume_db = 0
 @export var max_volume_db = 1
 @export var maxDistance = 1000
+
+var max_health := GameManager.access_shmup_health
+var _current_health := 1
+var current_health : int :
+	get: return _current_health
+	set(value):
+		_current_health = value
+		on_health_changed.emit()
+		
+
 func _ready():
 	area_entered.connect(func(area: Area2D):
-		SceneManager.next_game()
+		take_damage(1)
 	)
 	audio_stream_access_proximity.volume_db  = min_volume_db
 	raycast_routine()
-	
+	GameManager.on_racing_health_update.connect(func():
+		max_health = GameManager.access_racing_health
+		current_health = max_health
+	)
 	
 func raycast_routine() -> void:
 	audio_stream_access_proximity.play()
@@ -28,5 +41,13 @@ func raycast_routine() -> void:
 		audio_stream_access_proximity.volume_db = lerpedVolume
 	pass
 
+func take_damage(value):
+	if current_health <= 0: return;
+	current_health -= value
+	if current_health <= 0:
+		SceneManager.next_game()
+
 func _process(delta: float) -> void:
 	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
+
+signal on_health_changed()

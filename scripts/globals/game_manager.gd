@@ -4,6 +4,36 @@ var score := 0.0
 var time := 0.0
 
 var access_audio_description : bool = false
+var access_animated_background = false
+
+### RACING
+var racing_spawn_speed_value = 0.5
+var racing_spawn_speed_min = 1.0
+var racing_spawn_speed_max = 5.0
+var access_racing_spawn_speed : float :
+	get: return lerp(racing_spawn_speed_min, racing_spawn_speed_max, racing_spawn_speed_value)
+	set(value): racing_spawn_speed_value = (value - racing_spawn_speed_min) / (racing_spawn_speed_max - racing_spawn_speed_min)
+
+var _racing_health_value := 0.0
+var racing_health_value : float :
+	get: return _racing_health_value
+	set(value):
+		_racing_health_value = value
+		on_racing_health_update.emit()
+signal on_racing_health_update()
+var racing_health_min := 1.0
+var racing_health_max := 3.0
+var access_racing_health : int :
+	get: return lerp(racing_health_min, racing_health_max, racing_health_value)
+	set(value): racing_health_value = (value - racing_health_min) / (racing_health_max - racing_health_min)
+
+var racing_enemy_speed_value = 0.5
+var racing_enemy_speed_min = 100.0
+var racing_enemy_speed_max = 500.0
+var access_racing_enemy_speed : float :
+	get: return lerp(racing_enemy_speed_min, racing_enemy_speed_max, racing_enemy_speed_value)
+	set(value): racing_enemy_speed_value = (value - racing_enemy_speed_min) / (racing_enemy_speed_max - racing_enemy_speed_min)
+
 
 ### SMHUP
 var shmup_fire_rate_value = 0.5
@@ -12,18 +42,20 @@ var shmup_fire_rate_max = 0.2
 var access_shmup_fire_rate : float :
 	get: return lerp(shmup_fire_rate_min, shmup_fire_rate_max, shmup_fire_rate_value)
 	set(value): shmup_fire_rate_value = (value - shmup_fire_rate_min) / (shmup_fire_rate_max - shmup_fire_rate_min)
-var _shmup_health_value := 0.5
+
+var _shmup_health_value := 0.0
 var shmup_health_value : float :
 	get: return _shmup_health_value
 	set(value):
 		_shmup_health_value = value
 		on_shmup_health_update.emit()
 signal on_shmup_health_update()
-var shmup_health_min := 1
-var shmup_health_max := 3
+var shmup_health_min := 1.0
+var shmup_health_max := 3.0
 var access_shmup_health : int :
 	get: return lerp(shmup_health_min, shmup_health_max, shmup_health_value)
 	set(value): shmup_health_value = (value - shmup_health_min) / (shmup_health_max - shmup_health_min)
+	
 var shmup_player_speed_value = 0.5
 var shmup_player_speed_min = 100.0
 var shmup_player_speed_max = 500.0
@@ -38,7 +70,6 @@ var access_shmup_spawn_speed : float :
 	get: return lerp(shmup_spawn_speed_min, shmup_spawn_speed_max, shmup_spawn_speed_value)
 	set(value): shmup_spawn_speed_value = (value - shmup_spawn_speed_min) / (shmup_spawn_speed_max - shmup_spawn_speed_min)
 
-var access_animated_background = false
 
 ### PLATFORMER
 #When set to true, the green zones in the LD will auto jump

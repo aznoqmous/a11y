@@ -1,0 +1,353 @@
+[gd_scene format=3 uid="uid://cyc1sahd56vgk"]
+
+[ext_resource type="Script" uid="uid://bw8nuh6lo74gn" path="res://scripts/platformer_game_layer.gd" id="1_0iyrw"]
+[ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="2_61x5y"]
+[ext_resource type="Texture2D" uid="uid://c8q44nhppqi4" path="res://sprites/Background-npr.png" id="3_1kg5k"]
+[ext_resource type="Texture2D" uid="uid://ciu1xmgywik50" path="res://sprites/uis/d-pad-h.png" id="4_0iyrw"]
+[ext_resource type="Texture2D" uid="uid://bqhtgtucbn8g8" path="res://sprites/uis/button.png" id="5_ybwhp"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="6_4dsnq"]
+[ext_resource type="Script" uid="uid://7uua8e7ednvp" path="res://scripts/input_key_label.gd" id="7_yi4k3"]
+[ext_resource type="Texture2D" uid="uid://os5hxlton3ao" path="res://sprites/uis/x.PNG" id="8_hd7ml"]
+[ext_resource type="Texture2D" uid="uid://bgytcuf7k85ry" path="res://sprites/nine-patch.png" id="9_nl85w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umkka"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_po8c3"]
+font = ExtResource("6_4dsnq")
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhvut"]
+font = ExtResource("6_4dsnq")
+font_size = 32
+font_color = Color(0.37109375, 0.37109375, 0.37109375, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hww0e"]
+font = ExtResource("6_4dsnq")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvq2b"]
+font = ExtResource("6_4dsnq")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bpif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nl85w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qa255"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lylj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njc4u"]
+
+[node name="PlatformerGameLayer" type="CanvasLayer" unique_id=32325962]
+script = ExtResource("1_0iyrw")
+
+[node name="Control" type="Control" parent="." unique_id=319613499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="Control" unique_id=71279293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=557485806]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = -248.0
+offset_right = 418.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_umkka")
+
+[node name="TileScaleContainer" type="Container" parent="Control/Panel" unique_id=521044501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_61x5y")
+tile_scale = 0.785
+metadata/_custom_type_script = "uid://iru4e87kcgfl"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel/TileScaleContainer" unique_id=694661654]
+layout_mode = 2
+texture = ExtResource("3_1kg5k")
+patch_margin_left = 81
+patch_margin_top = 55
+patch_margin_right = 70
+patch_margin_bottom = 39
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=371322108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 71.0
+offset_right = -21.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="Control/Panel/MarginContainer" unique_id=1396522507]
+layout_mode = 2
+columns = 2
+
+[node name="Control" type="Control" parent="Control/Panel/MarginContainer/HBoxContainer" unique_id=937928841]
+custom_minimum_size = Vector2(390.125, 360)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=549603143]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 53.0
+offset_right = 208.0
+offset_bottom = 233.0
+texture = ExtResource("4_0iyrw")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=538515371]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 53.0
+offset_right = 370.0
+offset_bottom = 233.0
+texture = ExtResource("5_ybwhp")
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=466544632]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = -28.0
+offset_top = 272.0
+offset_right = 272.0
+offset_bottom = 305.0
+text = "Move"
+label_settings = SubResource("LabelSettings_po8c3")
+horizontal_alignment = 1
+
+[node name="Shoot" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=1054214326]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 136.0
+offset_top = 272.0
+offset_right = 436.0
+offset_bottom = 305.0
+text = "Jump"
+label_settings = SubResource("LabelSettings_po8c3")
+horizontal_alignment = 1
+
+[node name="ActionButton" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=245599257]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 136.0
+offset_top = 212.0
+offset_right = 436.0
+offset_bottom = 245.0
+text = "Shoot"
+label_settings = SubResource("LabelSettings_bhvut")
+horizontal_alignment = 1
+script = ExtResource("7_yi4k3")
+action = "Space"
+
+[node name="ActionButton2" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=1686957116]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = -27.0
+offset_top = 38.0
+offset_right = 273.0
+offset_bottom = 71.0
+text = "Z"
+label_settings = SubResource("LabelSettings_bhvut")
+horizontal_alignment = 1
+script = ExtResource("7_yi4k3")
+action = "Up"
+
+[node name="ActionButton3" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=2011608668]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = -27.0
+offset_top = 207.0
+offset_right = 273.0
+offset_bottom = 240.0
+text = "Down"
+label_settings = SubResource("LabelSettings_bhvut")
+horizontal_alignment = 1
+script = ExtResource("7_yi4k3")
+action = "Down"
+
+[node name="ActionButton4" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=1273418242]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = -104.0
+offset_top = 96.0
+offset_right = 196.0
+offset_bottom = 129.0
+text = "Left"
+label_settings = SubResource("LabelSettings_bhvut")
+horizontal_alignment = 1
+script = ExtResource("7_yi4k3")
+action = "Left"
+
+[node name="ActionButton5" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/Control" unique_id=1316809680]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 96.0
+offset_right = 343.0
+offset_bottom = 129.0
+text = "Right"
+label_settings = SubResource("LabelSettings_bhvut")
+horizontal_alignment = 1
+script = ExtResource("7_yi4k3")
+action = "Right"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer/HBoxContainer" unique_id=310459580]
+custom_minimum_size = Vector2(390.125, 360)
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2029759430]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=641379000]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Autojump"
+label_settings = SubResource("LabelSettings_hww0e")
+
+[node name="AutojumpCheckbox" type="CheckButton" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=163379702]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1860188332]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1463533820]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Invincibility"
+label_settings = SubResource("LabelSettings_hww0e")
+
+[node name="InvincibilityCheckbox" type="CheckButton" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=201934954]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1096990561]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=404032384]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "One button move"
+label_settings = SubResource("LabelSettings_hww0e")
+
+[node name="AutomoveCheckbox" type="CheckButton" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1663711573]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1274350363]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1993478879]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Magnet"
+label_settings = SubResource("LabelSettings_hww0e")
+
+[node name="MagnetCheckbox" type="CheckButton" parent="Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer4" unique_id=917975192]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=82163116]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.5
+offset_top = 19.0
+offset_right = 159.5
+offset_bottom = 62.0
+grow_horizontal = 2
+text = "Platformer !"
+label_settings = SubResource("LabelSettings_nvq2b")
+horizontal_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="Control" unique_id=939337690]
+modulate = Color(0.87109375, 0.25520325, 0.25520325, 1)
+layout_mode = 0
+offset_left = 854.0
+offset_top = 89.0
+offset_right = 917.0
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_hd7ml")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PlayButton" type="Button" parent="." unique_id=1219987207]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = 226.0
+offset_right = 117.5
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_4dsnq")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7bpif")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nl85w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qa255")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8lylj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_njc4u")
+text = "Play"
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayButton" unique_id=1373039145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -13.0
+offset_right = 27.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileScaleContainer" type="Container" parent="PlayButton/MarginContainer" unique_id=400251334]
+layout_mode = 2
+script = ExtResource("2_61x5y")
+tile_scale = 0.38
+
+[node name="Panel" type="NinePatchRect" parent="PlayButton/MarginContainer/TileScaleContainer" unique_id=1005780654]
+modulate = Color(0.9140625, 0.28207397, 0.28207397, 1)
+z_index = -1
+layout_mode = 2
+texture = ExtResource("9_nl85w")
+region_rect = Rect2(0, 0, 311, 316)
+patch_margin_left = 100
+patch_margin_top = 98
+patch_margin_right = 94
+patch_margin_bottom = 102

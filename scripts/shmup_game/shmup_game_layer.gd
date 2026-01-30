@@ -5,9 +5,14 @@ extends CanvasLayer
 @onready var player_speed_slider: HSlider = $Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/PlayerSpeedSlider
 @onready var spawn_speed_slider: HSlider = $Control/Panel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer4/SpawnSpeedSlider
 @onready var quit_button: TextureButton = $Control/QuitButton
+@onready var play_button: Button = $PlayButton
 
 func _ready():
 	quit_button.pressed.connect(func(): set_visible(false))
+	play_button.pressed.connect(func(): 
+		play_button.set_visible(false)
+		set_visible(false)
+	)
 	player_health_slider.min_value = GameManager.shmup_health_min
 	player_health_slider.max_value = GameManager.shmup_health_max
 	player_health_slider.value = GameManager.access_shmup_health

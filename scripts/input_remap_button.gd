@@ -76,7 +76,11 @@ func update_text():
 				text = OS.get_keycode_string(input.physical_keycode)
 			else:
 				text = OS.get_keycode_string(input.keycode)
-
+			if text == "W": text = "Z"
+			elif text == "Z": text = "W"
+			elif text == "Q": text = "A"
+			elif text == "A": text = "Q"
+			
 func map_input_event(event):
 	var action_events_list = InputMap.action_get_events(action)
 	if action_event_index < action_events_list.size():

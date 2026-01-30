@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bx6kdaceinlrf" path="res://sprites/racing_game/racing-road-stripes.png" id="2_26ryi"]
 [ext_resource type="PackedScene" uid="uid://cw1v57xa6f8fi" path="res://scenes/uis/overlay_control.tscn" id="2_cyw1b"]
 [ext_resource type="PackedScene" uid="uid://bqcwi7ox16sg0" path="res://scenes/alert.tscn" id="2_pbor5"]
+[ext_resource type="Script" uid="uid://j6fta6jdym6i" path="res://scripts/racing_layer.gd" id="3_7gbra"]
 [ext_resource type="Script" uid="uid://xco1krho6chx" path="res://scenes/racing_game/racing_audio_description.gd" id="3_h61qq"]
 [ext_resource type="Script" uid="uid://b71prlu1upady" path="res://scripts/racing_game/racing_player.gd" id="3_p06tx"]
 [ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="3_xuh6x"]
+[ext_resource type="Texture2D" uid="uid://tow40npewrqj" path="res://sprites/uis/heart.png" id="4_7gbra"]
 [ext_resource type="AudioStream" uid="uid://drukf5fqmmp36" path="res://audio/access/top.wav" id="4_mbmas"]
 [ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="5_15qfb"]
 [ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="5_cyw1b"]
@@ -20,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://ctxfg2mg388y0" path="res://resources/racing_game/school_bus.tres" id="8_cyw1b"]
 [ext_resource type="Resource" uid="uid://b1mqnfq0lwu4e" path="res://resources/racing_game/scooter.tres" id="9_pbor5"]
 [ext_resource type="AudioStream" uid="uid://coj6h348h7fqj" path="res://audio/Player_Car_Loop.ogg" id="14_xuh6x"]
+[ext_resource type="PackedScene" uid="uid://tuarismhxibi" path="res://scenes/racing_game/racing_game_layer.tscn" id="23_7gbra"]
 
 [sub_resource type="AudioStream" id="AudioStream_h61qq"]
 
@@ -33,7 +36,54 @@ alert_spawns = [NodePath("Alerts/Lane1"), NodePath("Alerts/Lane2"), NodePath("Al
 alert_scene = ExtResource("2_pbor5")
 racing_audio_description = NodePath("RacingAudioDescription")
 
-[node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("3_xuh6x")]
+[node name="RacingLayer" type="CanvasLayer" parent="." unique_id=1962187733 node_paths=PackedStringArray("health_textures")]
+script = ExtResource("3_7gbra")
+health_textures = [NodePath("Control/HealthContainer/HealtTexture"), NodePath("Control/HealthContainer/TextureRect2"), NodePath("Control/HealthContainer/TextureRect3")]
+health_color = Color(0.94509804, 0.32156864, 0.32156864, 1)
+
+[node name="Control" type="Control" parent="RacingLayer" unique_id=1406304784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="RacingLayer/Control" unique_id=1608889143]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -201.0
+offset_right = 201.0
+offset_bottom = 95.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="HealtTexture" type="TextureRect" parent="RacingLayer/Control/HealthContainer" unique_id=888078031]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_7gbra")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="RacingLayer/Control/HealthContainer" unique_id=609519904]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_7gbra")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="RacingLayer/Control/HealthContainer" unique_id=441676678]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_7gbra")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IngameMenu" parent="." unique_id=1895831733 node_paths=PackedStringArray("game_binding_layer") instance=ExtResource("3_xuh6x")]
+game_binding_layer = NodePath("../RacingGameLayer")
 
 [node name="OverlayControl" parent="." unique_id=863188350 instance=ExtResource("2_cyw1b")]
 
@@ -185,5 +235,7 @@ position = Vector2(1059, 328)
 
 [node name="Lane3" type="Node2D" parent="Alerts" unique_id=2070546829]
 position = Vector2(1059, 528)
+
+[node name="RacingGameLayer" parent="." unique_id=32325962 instance=ExtResource("23_7gbra")]
 
 [connection signal="body_entered" from="World/Player" to="." method="_on_player_body_entered"]

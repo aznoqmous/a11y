@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dvrpea4d607hm" path="res://sprites/racing_game/arrow.png" id="8_geqsw"]
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="10_i6eov"]
 [ext_resource type="PackedScene" path="res://scenes/platformer_game/jump_collision.tscn" id="11_y8trb"]
-[ext_resource type="PackedScene" uid="uid://cyc1sahd56vgk" path="res://scenes/uis/platformer_game_layer.tscn" id="15_tjot2"]
+[ext_resource type="PackedScene" uid="uid://cyc1sahd56vgk" path="res://scenes/platformer_game/platformer_game_layer.tscn" id="15_tjot2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mifp7"]
 radius = 21.0

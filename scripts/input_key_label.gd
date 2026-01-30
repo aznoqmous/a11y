@@ -46,5 +46,9 @@ func update_text():
 				text = OS.get_keycode_string(input.physical_keycode)
 			else:
 				text = OS.get_keycode_string(input.keycode)
+			if text == "W": text = "Z"
+			elif text == "Z": text = "W"
+			elif text == "Q": text = "A"
+			elif text == "A": text = "Q"
 	print("UPDATE TEXT")
 	last_action = action

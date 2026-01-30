@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://cv3t8mjnk823p" path="res://sprites/shmup_game/shmup-player.png" id="7_fm4q6"]
 [ext_resource type="Resource" uid="uid://du6yoohm1j47w" path="res://resources/shmup_game/vessel.tres" id="7_gcbj8"]
 [ext_resource type="Resource" uid="uid://d2i6ppqqoft0y" path="res://resources/shmup_game/asteroid.tres" id="9_hd3y3"]
-[ext_resource type="Script" path="res://scripts/transition_layer.gd" id="13_61vv6"]
+[ext_resource type="Script" uid="uid://dufeqbwpxrd2v" path="res://scripts/transition_layer.gd" id="13_61vv6"]
 [ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="13_e76ee"]
-[ext_resource type="Script" path="res://scripts/tile_scale_container.gd" id="14_61vv6"]
+[ext_resource type="Script" uid="uid://iru4e87kcgfl" path="res://scripts/tile_scale_container.gd" id="14_61vv6"]
 [ext_resource type="Texture2D" uid="uid://bgytcuf7k85ry" path="res://sprites/nine-patch.png" id="14_rabti"]
-[ext_resource type="PackedScene" uid="uid://r5ns0ldrqmd3" path="res://scenes/uis/shmup_game_layer.tscn" id="20_lqcit"]
+[ext_resource type="PackedScene" uid="uid://r5ns0ldrqmd3" path="res://scenes/shmup_game/shmup_game_layer.tscn" id="20_lqcit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm4q6"]
 size = Vector2(97, 34)

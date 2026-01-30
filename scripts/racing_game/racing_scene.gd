@@ -17,11 +17,15 @@ var access_direction = 1
 @onready var background_parallax: Parallax2D = $Decor/BackgroundParallax
 @onready var parallax_sprite_2d: Sprite2D = $Decor/BackgroundParallax/ParallaxSprite2D
 
+var base_coin_gain := 0.1
+
 func _ready():
-	spawner.on_spawn.connect(func(foe, index):
+	base_coin_gain = spawner.spawn_base_gain
+	spawner.on_spawn.connect(func(foe: Foe, index):
 		var alert = alert_scene.instantiate()
 		alert_spawns[index].add_child(alert)
 		alert.position = Vector2.LEFT.rotated(randf() * TAU) * randf() * 30.0
+		foe.speed = foe.speed.normalized() * GameManager.access_racing_enemy_speed
 	)
 	player.arrow_container.scale.y = -get_access_direction()
 	racing_audio_description.init()
@@ -42,6 +46,8 @@ func _input(event: InputEvent) -> void:
 		player.arrow_container.scale.y = -get_access_direction()
 
 func _process(delta):
+	spawner.spawn_base_gain = base_coin_gain * GameManager.access_racing_spawn_speed
+	spawner.spawn_cooldown = GameManager.access_racing_spawn_speed
 	GameManager.set_access_color(parallax_sprite_2d, GameManager.Colors.BACKGROUND)
 	player.position = player.position.lerp(selected_lane.position, delta * 10.0)
 	parallax_2d.autoscroll.x = -600 if GameManager.access_animated_background else 0

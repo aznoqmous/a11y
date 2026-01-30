@@ -18,7 +18,6 @@ func _ready():
 			star.speed = foe.speed
 		)
 	)
-	
 
 func _process(delta: float) -> void:
 	spawner.spawn_base_gain = base_coin_gain * GameManager.access_shmup_spawn_speed
