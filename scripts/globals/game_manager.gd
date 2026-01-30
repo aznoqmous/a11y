@@ -9,10 +9,10 @@ var access_platformer_auto_jump = false
 var access_animated_background = false
 
 #When set to true, the green zones in the LD will auto jump
-var access_platformer_magnet = false
+var access_magnet = false
 
-var access_platformer_radius = 1
-var access_platformer_strength_value = 1
+var access_magnet_radius = 1
+var access_magnet_strength_value = 0.2
 var access_platformer_invincibility = false
 
 var custom_colors: bool
@@ -45,8 +45,8 @@ func _input(event: InputEvent) -> void:
 		access_platformer_auto_jump = !access_platformer_auto_jump
 		print("auto jump is now : ","enabled" if access_platformer_auto_jump else "disabled")
 	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F5):
-		access_platformer_magnet = !access_platformer_magnet
-		print("magnet is now : ","enabled" if access_platformer_magnet else "disabled")
+		access_magnet = !access_magnet
+		print("magnet is now : ","enabled" if access_magnet else "disabled")
 		
 func reset_time():
 	time = 0.0

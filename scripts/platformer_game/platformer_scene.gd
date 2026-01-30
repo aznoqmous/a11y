@@ -10,7 +10,6 @@ func _ready():
 	camera_target_position = camera_2d.global_position
 	death_zone.body_entered.connect(func(body: PlatformerPlayer):
 		if(GameManager.access_platformer_invincibility):
-			print("DEAD")
 			body.jump(3)
 			pass
 		else :
