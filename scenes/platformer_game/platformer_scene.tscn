@@ -74,7 +74,6 @@ script = ExtResource("3_j34ms")
 move_speed = 600.0
 gravity = 2000.0
 jump_power = 800.0
-coyote_jump_time = null
 arrow_container = NodePath("ArrowContainer")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=804030744]

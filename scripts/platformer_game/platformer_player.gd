@@ -41,7 +41,7 @@ func change_direction():
 func jump(strength:float = 1):
 	var strengthValue = strength 
 	if(GameManager.access_platformer_auto_move):
-		strengthValue += GameManager.access_platformer_auto_move_value/1.0 * 0.5
+		strengthValue += clamp(1.0/GameManager.access_platformer_auto_move_value * 0.25,0.1,3)
 	velocity.y -= jump_power * strengthValue
 	coyote_time = 0.0
 	

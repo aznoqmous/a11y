@@ -16,7 +16,8 @@ var access_magnet_strength_value = 0.2
 var access_platformer_invincibility = false
 
 var access_platformer_auto_move = false
-var access_platformer_auto_move_value = 0.5
+#Tweakable avec un slider de 0.3 à 1, default value : 0.5
+var access_platformer_auto_move_value = 0.7
 
 var custom_colors: bool
 enum Colors {
