@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hyh3jftlmogi" path="res://sprites/rect.png" id="5_fljem"]
 [ext_resource type="Script" uid="uid://7r8uo8q3g3f" path="res://scripts/win_zone.gd" id="7_mifp7"]
 [ext_resource type="Texture2D" uid="uid://dxnds7gw0ay84" path="res://sprites/shmup_game/flag.png" id="7_s7k25"]
+
 [ext_resource type="PackedScene" uid="uid://cq7cbt6vryk2x" path="res://scenes/score_star.tscn" id="10_i6eov"]
 [ext_resource type="PackedScene" uid="uid://dlg0imgecbvrm" path="res://scenes/platformer_game/jump_collision.tscn" id="11_y8trb"]
 

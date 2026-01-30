@@ -1,4 +1,4 @@
-class_name PlatformerScene extends Node
+class_name PlatformerScene extends Node2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var player: PlatformerPlayer = $World/Player
 @onready var death_zone: Area2D = $DeathZone
@@ -21,3 +21,5 @@ func _process(delta: float) -> void:
 	if player.global_position.x > camera_target_position.x:
 		camera_target_position.x = player.global_position.x
 	camera_2d.global_position = lerp(camera_2d.global_position, camera_target_position, delta * 5.0)
+	
+	player.position.x = max(player.position.x, camera_2d.position.x - get_viewport_rect().size.x / 2.0)

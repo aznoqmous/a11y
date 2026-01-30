@@ -44,6 +44,9 @@ func _process(delta: float) -> void:
 	if bullet_scene and fire_cooldown and fire_time < 0:
 		fire_time = fire_cooldown
 		fire()
+		
+	if position.distance_to(get_viewport_rect().size / 2) > get_viewport_rect().size.length():
+		queue_free()
 	
 func take_damage(value):
 	if not is_alive: return

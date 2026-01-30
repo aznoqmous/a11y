@@ -13,7 +13,10 @@ config_version=5
 config/name="a11y"
 run/main_scene="uid://bh0mhc8ldeofg"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.8862745, 0.88235295, 0.8745098, 1)
+boot_splash/show_image=false
+config/icon="uid://dcemviw1y5ekn"
+config/windows_native_icon="res://sprites/icon.ico"
 
 [audio]
 

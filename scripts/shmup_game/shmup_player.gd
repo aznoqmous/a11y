@@ -36,7 +36,10 @@ func _process(delta) -> void:
 		fire_time -= delta
 		if fire_time < 0:
 			fire()
-
+			
+	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
+	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
+	
 func fire():
 	fire_time = fire_speed
 	var bullet : PlayerBullet = bullet_scene.instantiate()

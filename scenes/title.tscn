@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bh0mhc8ldeofg"]
 
-[ext_resource type="Script" uid="uid://pd57qswfxayc" path="res://scripts/title.gd" id="1_mom7w"]
-[ext_resource type="Texture2D" uid="uid://dlgenba06oreq" path="res://sprites/title.PNG" id="1_oyqm6"]
-[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="1_y7k74"]
-[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="2_kpexm"]
-[ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="4_3xoar"]
-[ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="6_0824t"]
-[ext_resource type="Script" uid="uid://4fn850eudqkr" path="res://scripts/title_sprites.gd" id="7_nuqgq"]
-[ext_resource type="Texture2D" uid="uid://f6007ccj3ahm" path="res://sprites/shmup_game/shmup-obstacle.PNG" id="8_lx2ly"]
-[ext_resource type="Texture2D" uid="uid://ca55kp4ucwlo2" path="res://sprites/platformer_game/platformer-player.png" id="9_jil77"]
+[ext_resource type="Script" uid="uid://pd57qswfxayc" path="res://scripts/title.gd" id="1_hiwto"]
+[ext_resource type="Texture2D" uid="uid://b32rosfst7li5" path="res://sprites/Background.png" id="2_w65of"]
+[ext_resource type="Texture2D" uid="uid://dlgenba06oreq" path="res://sprites/title.PNG" id="3_ygloa"]
+[ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="4_6civk"]
+[ext_resource type="PackedScene" uid="uid://b1v6xhh7g1kdu" path="res://scenes/uis/ingame_menu.tscn" id="5_7af2g"]
+[ext_resource type="Texture2D" uid="uid://dq8gdrvhws5c3" path="res://sprites/racing_game/racing-player.PNG" id="6_81wt4"]
+[ext_resource type="Script" uid="uid://4fn850eudqkr" path="res://scripts/title_sprites.gd" id="7_kcc3o"]
+[ext_resource type="Texture2D" uid="uid://f6007ccj3ahm" path="res://sprites/shmup_game/shmup-obstacle.PNG" id="8_6rcc6"]
+[ext_resource type="Texture2D" uid="uid://ca55kp4ucwlo2" path="res://sprites/platformer_game/platformer-player.png" id="9_ah8jo"]
 
 [sub_resource type="Animation" id="Animation_7lgly"]
 length = 0.001
@@ -70,11 +70,11 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ranr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mom7w"]
-font = ExtResource("2_kpexm")
+font = ExtResource("4_6civk")
 font_color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Node2D" unique_id=2001326871]
-script = ExtResource("1_mom7w")
+script = ExtResource("1_hiwto")
 
 [node name="BackgroundParallax" type="Parallax2D" parent="." unique_id=1667361888]
 scroll_offset = Vector2(567, 97)
@@ -84,7 +84,7 @@ repeat_times = 5
 
 [node name="ParallaxSprite2D" type="Sprite2D" parent="BackgroundParallax" unique_id=2095111738]
 position = Vector2(363, 276)
-texture = ExtResource("1_y7k74")
+texture = ExtResource("2_w65of")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1782571265]
 
@@ -111,7 +111,7 @@ offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(576, 324)
-texture = ExtResource("1_oyqm6")
+texture = ExtResource("3_ygloa")
 expand_mode = 1
 stretch_mode = 5
 
@@ -136,7 +136,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.265625, 0.265625, 0.265625, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_kpexm")
+theme_override_fonts/font = ExtResource("4_6civk")
 theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3xoar")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mom7w")
@@ -157,7 +157,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.265625, 0.265625, 0.265625, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_kpexm")
+theme_override_fonts/font = ExtResource("4_6civk")
 theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3xoar")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mom7w")
@@ -188,29 +188,34 @@ text = "Adrien - Armand - Hugo - Manon - Paul - Vincent"
 label_settings = SubResource("LabelSettings_mom7w")
 horizontal_alignment = 1
 
-[node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("4_3xoar")]
+[node name="IngameMenu" parent="." unique_id=1895831733 instance=ExtResource("5_7af2g")]
+
+[node name="GameButton" parent="IngameMenu/IngameMenu/Control/HBoxContainer" parent_id_path=PackedInt32Array(1895831733, 686311841) index="0" unique_id=1821070153]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919368846]
 position = Vector2(141.99998, 471.99997)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_0824t")
-script = ExtResource("7_nuqgq")
+texture = ExtResource("6_81wt4")
+script = ExtResource("7_kcc3o")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=268286529]
 position = Vector2(976.99994, 423.99997)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_lx2ly")
-script = ExtResource("7_nuqgq")
+texture = ExtResource("8_6rcc6")
+script = ExtResource("7_kcc3o")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=124637014]
 position = Vector2(219, 140.00006)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_lx2ly")
-script = ExtResource("7_nuqgq")
+texture = ExtResource("8_6rcc6")
+script = ExtResource("7_kcc3o")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=2058307925]
 position = Vector2(913, 201)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_jil77")
+texture = ExtResource("9_ah8jo")
 offset = Vector2(0, -58.525)
-script = ExtResource("7_nuqgq")
+script = ExtResource("7_kcc3o")
+
+[editable path="IngameMenu"]
