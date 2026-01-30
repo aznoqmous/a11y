@@ -19,7 +19,7 @@ font = ExtResource("1_rxdjm")
 font_size = 42
 font_color = Color(0, 0, 0, 1)
 
-[node name="RemappingLayer" type="CanvasLayer" unique_id=32325962]
+[node name="RemappingLayer2" type="CanvasLayer" unique_id=32325962]
 script = ExtResource("1_bxxj4")
 
 [node name="Control" type="Control" parent="." unique_id=319613499]

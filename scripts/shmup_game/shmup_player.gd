@@ -1,7 +1,13 @@
 class_name ShmupPlayer extends Area2D
 
-@export var max_health := 1
-var current_health := 1
+var max_health := GameManager.access_shmup_health
+var _current_health := 1
+var current_health : int :
+	get: return _current_health
+	set(value):
+		_current_health = value
+		on_health_changed.emit()
+		
 @export var move_speed := 300.0
 
 @export_category("Bullet")
@@ -19,10 +25,16 @@ func _ready():
 		take_damage(1)
 	)
 	current_health = max_health
+	
+	GameManager.on_shmup_health_update.connect(func():
+		max_health = GameManager.access_shmup_health
+		current_health = max_health
+	)
 
 func _process(delta) -> void:
 	GameManager.set_access_color(sprite_2d, GameManager.Colors.PLAYER)
-
+	move_speed = GameManager.access_shmup_player_speed
+	fire_speed = GameManager.access_shmup_fire_rate
 	if Input.is_action_pressed("Up"):
 		position.y -= delta * move_speed
 	if Input.is_action_pressed("Down"):
@@ -52,4 +64,5 @@ func take_damage(value):
 	current_health -= value
 	if current_health <= 0:
 		SceneManager.next_game()
-		
+
+signal on_health_changed()

@@ -39,7 +39,7 @@ func _ready():
 	)
 
 func _process(delta: float) -> void:
-	Engine.time_scale = 0.0 if inputs_binding_layer.visible or colors_binding_layer.visible or audio_binding_layer.visible else 1.0
+	Engine.time_scale = 0.0 if (game_binding_layer and game_binding_layer.visible) or inputs_binding_layer.visible or colors_binding_layer.visible or audio_binding_layer.visible else 1.0
 	#get_tree().paused = inputs_binding_layer.visible or colors_binding_layer.visible
 	game_button.scale = lerp(game_button.scale, Vector2.ONE, delta * 5.0)
 	inputs_button.scale = lerp(inputs_button.scale, Vector2.ONE, delta * 5.0)
