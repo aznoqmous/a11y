@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhluybknaxlqe" path="res://scripts/ingame_menu.gd" id="1_uxpsq"]
 [ext_resource type="Texture2D" uid="uid://b1wsyfiyxfjxf" path="res://sprites/uis/controller.PNG" id="2_ljfvm"]
+[ext_resource type="Texture2D" uid="uid://brkkn8oje7nfv" path="res://sprites/uis/slider.png" id="2_n4kq7"]
 [ext_resource type="PackedScene" uid="uid://lxno8luvk20y" path="res://scenes/uis/colors_layer.tscn" id="2_nkaj3"]
 [ext_resource type="PackedScene" uid="uid://dv6mn5fjg5e5w" path="res://scenes/uis/remapping_layer.tscn" id="3_6cw0o"]
 [ext_resource type="FontFile" uid="uid://cqaiaflnj0gq7" path="res://Gaegu-Bold.ttf" id="3_n4kq7"]
@@ -32,24 +33,52 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="Control" parent="IngameMenu/Control" unique_id=55779733]
+[node name="HBoxContainer" type="HBoxContainer" parent="IngameMenu/Control" unique_id=686311841]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -234.0
-offset_top = 16.0
-offset_right = -10.0
-offset_bottom = 80.0
+offset_left = -287.0
+offset_top = 23.0
+offset_right = -19.0
+offset_bottom = 87.0
 grow_horizontal = 0
+theme_override_constants/separation = 14
+
+[node name="GameButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1821070153]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_n4kq7")
+texture_pressed = ExtResource("2_n4kq7")
+texture_hover = ExtResource("2_n4kq7")
+texture_disabled = ExtResource("2_n4kq7")
+texture_focused = ExtResource("2_n4kq7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="IngameMenu/Control/HBoxContainer/GameButton" unique_id=1909259663]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -2.0
+offset_right = 26.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Game"
+label_settings = SubResource("LabelSettings_njmwl")
+horizontal_alignment = 1
 
 [node name="InputsButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1924375671]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-pivot_offset = Vector2(32, 32)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_ljfvm")
 texture_pressed = ExtResource("2_ljfvm")
@@ -79,11 +108,7 @@ horizontal_alignment = 1
 [node name="ColorsButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1625945815]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_left = 80.0
-offset_right = 144.0
-offset_bottom = 64.0
-pivot_offset = Vector2(32, 32)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_47k63")
 texture_pressed = ExtResource("4_47k63")
@@ -113,11 +138,7 @@ horizontal_alignment = 1
 [node name="AudioButton" type="TextureButton" parent="IngameMenu/Control/HBoxContainer" unique_id=1090349324]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_left = 160.0
-offset_right = 224.0
-offset_bottom = 64.0
-pivot_offset = Vector2(32, 32)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_3u37u")
 texture_pressed = ExtResource("5_3u37u")
