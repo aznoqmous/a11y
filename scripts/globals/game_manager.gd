@@ -15,6 +15,9 @@ var access_magnet_radius = 1
 var access_magnet_strength_value = 0.2
 var access_platformer_invincibility = false
 
+var access_platformer_auto_move = false
+var access_platformer_auto_move_value = 0.5
+
 var custom_colors: bool
 enum Colors {
 	PLAYER,
@@ -47,7 +50,10 @@ func _input(event: InputEvent) -> void:
 	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F5):
 		access_magnet = !access_magnet
 		print("magnet is now : ","enabled" if access_magnet else "disabled")
-		
+	if(event is InputEventKey and event.is_pressed() and !event.is_echo() and event.keycode == KEY_F4):
+		access_platformer_auto_move = !access_platformer_auto_move
+		print("auto move is now : ","enabled" if access_platformer_auto_move else "disabled")
+			
 func reset_time():
 	time = 0.0
 	

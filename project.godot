@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="a11y"
-run/main_scene="uid://bh0mhc8ldeofg"
+run/main_scene="uid://djcily835i1nn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.8862745, 0.88235295, 0.8745098, 1)
 boot_splash/show_image=false
