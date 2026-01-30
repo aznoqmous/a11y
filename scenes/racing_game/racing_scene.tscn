@@ -108,6 +108,7 @@ y_sort_enabled = true
 
 [node name="Player" type="Area2D" parent="World" unique_id=173059636]
 position = Vector2(261, 322)
+collision_layer = 9
 collision_mask = 2
 script = ExtResource("3_p06tx")
 min_volume_db = -10
